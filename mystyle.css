@@ -1,0 +1,213 @@
+<html>
+<head>
+<style>
+h1 {
+font-family: Calibri;
+font-size: 30px;
+font-color: black;
+}
+.buttonP {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 6px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.buttonP {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.buttonP:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+h2 {
+font-size: 20px;
+font-family: Calibri;
+text-decoration: underline;
+}
+p.underline {
+font-size: 23px;
+font-weight: bold;
+text-decoration: underline;
+font-family: Calibri light;
+}
+
+p {
+font-family: 'Calibri', serif;font-size: 18px;
+}
+li {
+font-size: 16px;
+font-family: 'Calibri';
+}
+.button2306 {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    align: center;
+    color: white;
+    padding: 2px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+
+
+.button2306:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.buttonProcess {
+  display: inline-block;
+  border-radius: 7px;
+  background-color: white;
+  color: black;
+  border: 0.3px solid #008CBA;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.buttonProcess span {
+  cursor: pointer;
+color: black;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonProcess span:after {
+  content: '>>';
+  position: absolute;
+  opacity: 0;
+color: black;
+  top: 0;
+  right: -20px;
+color: black;
+  transition: 0.5s;
+}
+
+.buttonProcess:hover span {
+  padding-right: 25px;
+color: black;
+}
+
+.buttonProcess:hover span:after {
+  opacity: 1;
+color: black;
+  right: 0;
+}
+.buttonProcess:hover {
+    background-color: #008CBA;
+color: black;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.buttonDownload {
+  display: inline-block;
+  border-radius: 7px;
+  background-color: white;
+  border: 2px solid #008CBA;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 150px;
+color: black;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.buttonDownload span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonDownload:hover span:after {
+  opacity: 1;
+  right: 0;
+color: white;
+}
+.buttonDownload:hover {
+    background-color: #008CBA;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.buttonSmall {
+  display: inline-block;
+  border-radius: 7px;
+  background-color: white;
+  border: 2px solid black;
+  text-align: center;
+  font-size: 12px;
+  padding: 4px;
+  width: 80px;
+color: black;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.buttonSmall span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.buttonSmall:hover span:after {
+  opacity: 1;
+  right: 0;
+color: white;
+}
+.buttonSmall:hover {
+    background-color: black;
+    color: White;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+img.iconsmall {
+float: right;
+width: 100px;
+}
+img.iconlarge {
+float: right;
+max-width: 200px;
+}
+img.icon {
+    float: right;
+    max-width: 150px;
+}
+img.poster {
+  
+    float: center;
+    max-width: 300px;
+}
+img.poster1 {
+    float: center;
+    max-width: 500px;
+}
+img.poster2 {
+    float: center;
+    max-width: 600px;
+}
+</style>
+</head>
+</html>
