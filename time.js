@@ -1,4 +1,4 @@
-<script>
+
 // scripts here:
 window.onload = function submitQuiz(){
 //Code for Timer	
@@ -17,4 +17,4 @@ var interval = setInterval(function() {
 		setTimeout(function(){document.getElementById('submitButton').click(); }, 3000);
  
 };
-</script>
+
