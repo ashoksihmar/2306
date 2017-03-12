@@ -141,12 +141,20 @@ td {
 /*SFS light red = #c30b0a;
 SFS dark red = #9f2026; */
 
+<div class="navbar">
+    
+  <a href="#"><div id="hms">0:30</div></a>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+
+    </ul>
+</div>
 </style>
 <body><div class="navbar">
     
   
     <a href="http://www.iascgl.com/">Home</a>
-    <a href="#"><div align="right" id="timer" style="color:red"; style="size:15px">18</div></a>
+    <a href="#"><div id="countdown"></div></a>
 </div><br><Br><br>
     <div align="center">
     <img src="http://4.bp.blogspot.com/-MwY805Xr2Gk/WLcUUQLJrcI/AAAAAAAADuo/wjqSRiNirawWZV3LJo2xuTh6eLURRmHwACK4B/s1600/2.jpg" width="350px" height="85px"><br>
@@ -210,7 +218,7 @@ SFS dark red = #9f2026; */
  <tr>
    <td>
     <div>
-     <p class="question">Que.3: a)He is the most/ b)intelligent and also / c) the very talented student / d) of the college.</p>
+     <p class="question">Que.3: a)He is the most/ b)intelligent and also / c) the very talented sudent / d) of the college.</p>
 
       <ul>
          a<input class="answer" type="radio" name="q3" value="-.5">
@@ -220,7 +228,7 @@ SFS dark red = #9f2026; */
          <label>intelligent and also</label>
          <br>
          c<input class="answer" type="radio" name="q3" value="2">
-         <label id="correctString3">the very talented student</label>
+         <label id="correctString3">the very talented sudent</label>
          <br>
          d<input class="answer" type="radio" name="q3" value="-.5">
          <label>of the college</label>
@@ -802,6 +810,7 @@ together make 41   <div class="frac">
 	
   
 <!--show only wrong answers on submit-->
+    <p>English</p>
     <div class="quizAnswers" id="correctAnswer1"></div>
      <div class="quizAnswers" id="correctAnswer2"></div>
     <div class="quizAnswers" id="correctAnswer3"></div>
@@ -809,6 +818,7 @@ together make 41   <div class="frac">
     <div class="quizAnswers" id="correctAnswer5"></div>
     <div class="quizAnswers" id="correctAnswer6"></div>
     <div class="quizAnswers" id="correctAnswer7"></div>
+    <p>Reasoning</p>
     <div class="quizAnswers" id="correctAnswer8"></div>
     <div class="quizAnswers" id="correctAnswer9"></div>
     <div class="quizAnswers" id="correctAnswer10"></div>
@@ -817,6 +827,7 @@ together make 41   <div class="frac">
     <div class="quizAnswers" id="correctAnswer13"></div>
     <div class="quizAnswers" id="correctAnswer14"></div>
     <div class="quizAnswers" id="correctAnswer15"></div>
+    <p>Mathematics</p>
     <div class="quizAnswers" id="correctAnswer16"></div>
     <div class="quizAnswers" id="correctAnswer17"></div>
     <div class="quizAnswers" id="correctAnswer18"></div>
@@ -827,6 +838,7 @@ together make 41   <div class="frac">
     <div class="quizAnswers" id="correctAnswer23"></div>
     <div class="quizAnswers" id="correctAnswer24"></div>
     <div class="quizAnswers" id="correctAnswer25"></div>
+    <p>General Knowledge</p>
     <div class="quizAnswers" id="correctAnswer26"></div>
     <div class="quizAnswers" id="correctAnswer27"></div>
     <div class="quizAnswers" id="correctAnswer28"></div>
@@ -841,6 +853,7 @@ together make 41   <div class="frac">
     </div>
 
 </body>
+    
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>window.onbeforeunload = function () {//Prevent Ctrl+W
     return "Really want to quit the game?";
@@ -860,46 +873,61 @@ document.onkeydown = function (e) {
     }
 };
     </script>
-<script type="text/javascript">
-var timeoutHandle;
-function countdown(minutes) {
-    var seconds = 60;
-    var mins = minutes
-    function tick() {
-        var counter = document.getElementById("timer");
-        var current_minutes = mins-1
-        seconds--;
-        counter.innerHTML =
-        current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-        if( seconds > 0 ) {
-            timeoutHandle=setTimeout(tick, 1000);
+<div id="countdown"></div>
+<div id="countdown2"></div>
+<script>
+function countdown( elementName, minutes, seconds )
+{
+    var element, endTime, hours, mins, msLeft, time;
+
+    function twoDigits( n )
+    {
+        return (n <= 9 ? "0" + n : n);
+    }
+
+    function updateTimer()
+    {
+        msLeft = endTime - (+new Date);
+        if ( msLeft < 1000 ) {
+            element.innerHTML = "Quiz Submitted Check Your Marks thanks. iascgl.com!";
         } else {
-
-            if(mins > 1){
-
-               // countdown(mins-1);   never reach “00″ issue solved:Contributed by Victor Streithorst
-               setTimeout(function submitQuiz() { countdown(mins - 1); }, 1000);
-
-            }
+            time = new Date( msLeft );
+            hours = time.getUTCHours();
+            mins = time.getUTCMinutes();
+            element.innerHTML = (hours ? hours + ':' + twoDigits( mins ) : mins) + ':' + twoDigits( time.getUTCSeconds() );
+            setTimeout( updateTimer, time.getUTCMilliseconds() + 500 );
         }
     }
-    tick();
+
+    element = document.getElementById( elementName );
+    endTime = (+new Date) + 1000 * (60*minutes + seconds) + 500;
+    updateTimer();
 }
 
-countdown(18);
+countdown( "countdown", 18, 0 );
 
-    </script>
-    <script>
+    
+</script>
+<script>
 // scripts here:
 window.onload = function submitQuiz(){
 //Code for Timer	
+		var seconds_left = 10800;
+var interval = setInterval(function() {
+    document.getElementById('timer_div').innerHTML = "00:"+ (--seconds_left);
 
-    
+    if (seconds_left <= 0)
+    {
+        clearInterval(interval);
+        document.getElementById('timer_div').innerHTML = 'Yours TimeOut...';
+    }
+}, 10);
 
 
-		setTimeout(function(){document.getElementById('submitButton').click(); }, 108000);
+		setTimeout(function(){document.getElementById('submitButton').click(); }, 1080000);
  
 };
+
 
 
  function submitQuiz() {
