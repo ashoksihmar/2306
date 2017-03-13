@@ -7,5 +7,21 @@
 <h3>Total Marks: 60</h3>
 <h4> Marks for each question is 2<br>
 negative marking of 0.5 mark / wrong que</h4>
+  <script type="text/javascript"> 
+function disableselect(e){  
+return false  
+}  
+function reEnable(){  
+return true  
+}  
+//if IE4+  
+document.onselectstart=new Function ("return false")  
+document.oncontextmenu=new Function ("return false")  
+//if NS6  
+if (window.sidebar){  
+document.onmousedown=disableselect  
+document.onclick=reEnable  
+}
+</script>
   <p>Do not refresh the page during Quiz</p>
   iascgl.com
