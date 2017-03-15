@@ -1,0 +1,1087 @@
+<style>
+/* css here */
+{
+  border: 1px dotted black;
+}
+p.question {
+  font-family: Arial, sans-serif;
+   font-size:16px;
+  color: #2E2E2E;
+  margin-bottom:0px;
+}
+h2.quizHeader {
+  font-family: Arial, sans-serif;
+  font-weight:normal;
+  font-size:25px;
+  line-height: 27px;
+  margin: 24px 0 12px 0;
+  padding: 0 0 4px 0;
+  border-bottom: 1px solid #a2a2a2;
+}
+h2.quizScore{
+  font-family: Arial, sans-serif;
+  font-size:25px;
+}
+div.quizAnswers{
+  font-family: Arial, sans-serif;
+  font-size:16px;
+  color: #424242;
+  padding: 4px 0 4px 0;
+}
+label {
+  font-family: Arial, sans-serif;
+  font-size:14px;
+  color: #424242;
+  vertical-align:top;
+}
+input.answer[type="radio"] {
+  margin-bottom: 10px;
+}
+input.quizSubmit[type="submit"] {
+  -webkit-background-clip: border-box;
+  -webkit-background-origin: padding-box;
+  -webkit-background-size: auto;
+  -webkit-transition-delay: 0s, 0s;
+  -webkit-transition-duration: 0.2s, 0.2s;
+  -webkit-transition-property: color, background-color;
+  -webkit-transition-timing-function: ease, ease;
+  box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 5px 0px;
+  color: #ffffff;
+  background-color: #c30b0a;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  text-transform:uppercase;
+  height:35px;
+  width:85px;
+  border: 1px solid #5E5E5E;
+  border-radius:5px;
+  
+ }
+input.quizSubmit[type="submit"]:hover {
+  color: #ffffff;
+  background: #680f11;
+  text-decoration: none;
+}
+table {
+  background-color: #FFFFF;
+   border:1px solid #BDBDBD;
+  border-radius:5px;
+  padding:10px;
+  padding-left:25px;
+  box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 1px 0px;
+}
+th {
+  
+}
+tr {
+  
+}
+td {
+}
+.submitter {
+   width:85px;
+}
+.hide {
+   display:none;
+}
+.frac {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle; 
+    letter-spacing: 0.001em;
+    text-align: center;
+    
+    }
+.frac > span { 
+    display: block; 
+    padding: 0.1em; 
+    }
+.frac span.bottom {border-top: thin solid black;}
+.frac span.symbol {display: none;}
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+/*SFS light red = #c30b0a;
+SFS dark red = #9f2026; */
+<div class="navbar">
+    
+  <a href="#"><div id="hms">0:30</div></a>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+    </ul>
+</div>
+</style>
+<body><div class="navbar">
+    
+  
+    <a href="http://www.iascgl.com/" target="_blank">Home</a>
+    <a href="#"><div id="countdown"></div></a>
+</div><br><Br><br>
+    <div align="center">
+    <img src="http://4.bp.blogspot.com/-MwY805Xr2Gk/WLcUUQLJrcI/AAAAAAAADuo/wjqSRiNirawWZV3LJo2xuTh6eLURRmHwACK4B/s1600/2.jpg" width="350px" height="85px"><br>
+</div>
+  <h2 class="quizHeader">SSC MOCK TEST(Quiz)</h2>
+  
+ 
+ 
+       <p>Mark for each correct answer is 2 and for incorrect 1/4th score will be deducted ie 0.5. </p>
+<p>	       <strong>Maximum Marks is 60</strong></p>&nbsp;&nbsp;
+  <h2>English</h2>
+ <table style="width:100%">
+ <tr>
+   <td>
+       <div><h3>Spoting the error.</h3>
+     <p class="question">Que.1: a)Neither of the / b) are going to attand/ c) the party / d) on 10th October. .</p>
+<p></p>
+      <ul>
+      a<input class="answer" type="radio" name="q1" value="-.5">
+         <label>Neither of the</label>
+      <br>
+         b<input class="answer" type="radio" name="q1" value="2">
+         <label  id="correctString1">are going to attand</label>
+         <br>
+         c<input class="answer" type="radio" name="q1" value="-.5">
+         <label>the party</label>
+         <br>
+         d<input class="answer" type="radio" name="q1" value="-.5">
+         <label>on 10th October</label>
+      </ul>
+    </div>
+     </td>
+        </tr>
+        <tr>
+   <td>
+    <div>
+     <p class="question">Que.2:
+        a)If she would have come to me /b)I would have given her the /c)money needed.</p>
+      <ul>
+         a<input class="answer" type="radio" name="q2" value="2">
+         <label  id="correctString2">If she would have come to me</label>
+         <br>
+         b<input class="answer" type="radio" name="q2" value="-.5">
+         <label>I would have given her the</label>
+         <br>
+         c<input class="answer" type="radio" name="q2" value="-.5">
+         <label>money needed</label>
+         <br>
+         d<input class="answer" type="radio" name="q2" value="-.5">
+         <label>no error</label>
+      </ul>
+    </div>
+   </td>
+ </tr>
+ <tr>
+   <td>
+    <div>
+     <p class="question">Que.3: a)I bade him/ b)to submit all important documents / c) before he left / d) the job.</p>
+      <ul>
+         a<input class="answer" type="radio" name="q3" value="-.5">
+         <label>I bade him</label>
+         <br>
+         b<input class="answer" type="radio" name="q3" value="2">
+         <label id="correctString3">to submit all important documents</label>
+         <br>
+         c<input class="answer" type="radio" name="q3" value="-.5">
+         <label>before he left</label>
+         <br>
+         d<input class="answer" type="radio" name="q3" value="-.5">
+         <label>the job</label>
+      </ul>
+  </div>
+   </td>
+         </tr><tr>
+   <td>
+    <div><h3>Narration</h3>
+     <p class="question">Que.4: I said to him,"Why are you working so hard?".</p>
+      <ul>
+         a<input class="answer" type="radio" name="q4" value="2">
+         <label id="correctString4">I asked him why he was working so hard.</label>
+         <br>
+         b<input class="answer" type="radio" name="q4" value="-.5">
+         <label>I asked him why was he working so hard.</label>
+         <br>
+         c<input class="answer" type="radio" name="q4" value="-.5">
+         <label>I asked him why he had been working so hard.</label>
+         <br>
+         d<input class="answer" type="radio" name="q4" value="-.5">
+         <label>I asked him why had he been working so hard.</label>
+      </ul>
+    </div>
+   </td>
+        </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.5: Select appropriate Synonyms of 'Evoked'. </p>
+      <ul>
+         a<input class="answer" type="radio" name="q5" value="-.5">
+         <label>Escaped</label>
+         <br>
+         b<input class="answer" type="radio" name="q5" value="-.5">
+         <label>Summoned</label>
+         <br>
+         c<input class="answer" type="radio" name="q5" value="-.5">
+         <label>Produced</label>
+         <br>
+         d<input class="answer" type="radio" name="q5" value="2">
+         <label id="correctString5">Called forth</label>
+      </ul>
+    </div>
+   </td>
+         </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.6: Select appropriate Antonyms of 'Exotic'...</p>
+            
+      <ul>
+         a<input class="answer" type="radio" name="q6" value="-.5">
+         <label>Irrelevant</label>
+         <br>
+         b<input class="answer" type="radio" name="q6" value="-1">
+         <label>Common</label>
+         <br>
+         c<input class="answer" type="radio" name="q6" value="2">
+         <label id="correctString6">Wonderful</label>
+         <br>
+         d<input class="answer" type="radio" name="q6" value="-.5">
+         <label>Cosmopolitan</label>
+      </ul>
+    </div>
+   </td>
+         </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.7: a) I inspired him/ b) to take the heart/ c) that he injured his hand.</p>
+           
+            
+      <ul>
+         a<input class="answer" type="radio" name="q7" value="-.5">
+         <label>I inspired him</label>
+         <br>
+         b<input class="answer" type="radio" name="q7" value="2">
+         <label id="correctString7">to take the heart</label>
+         <br>
+         c<input class="answer" type="radio" name="q7" value="-.5">
+         <label>that he injured his hand</label>
+         <br>
+         d<input class="answer" type="radio" name="q7" value="-.5">
+         <label>No error</label>
+      </ul>
+    </div>
+   </td>
+     </tr><tr>
+         <td>
+    <div>
+        <h2>Reasoning</h2>
+     <p class="question">Que.8: A boy start from home in early morning and walk straight for 8Km facing the sun. then he takes a right turn and walk for 3 km. Then he turn right again and walks for 2 km and the turn left and walk for 1Km. Then he turn right, treval 1 km and then turn right and travels for 4km straight. How far he is from starting point ?</p>
+      <ul>
+         a<input class="answer" type="radio" name="q8" value="2">
+         <label  id="correctString8">5 Km</label>
+         <br>
+         b<input class="answer" type="radio" name="q8" value="-.5">
+         <label>4 Km</label>
+         <br>
+         c<input class="answer" type="radio" name="q8" value="-.5">
+         <label>6 Km</label>
+         <br>
+         d<input class="answer" type="radio" name="q8" value="-.5">
+         <label>2 Km</label>
+      </ul>
+    </div>
+   </td>
+        </tr><tr>
+         <td>
+    <div>
+     <p class="question">9. Pointing a lady on the stage, Devika said,"She is the sister of the son of the wife of my husband". How is lady related to Devika</p>
+      <ul>
+         a<input class="answer" type="radio" name="q9" value="-.5">
+         <label>Sister in Law</label>
+         <br>
+         b<input class="answer" type="radio" name="q9" value="2">
+         <label id="correctString9">Daugher</label>
+         <br>
+         c<input class="answer" type="radio" name="q9" value="-.5">
+         <label>Sister</label>
+         <br>
+         d<input class="answer" type="radio" name="q9" value="-.5">
+         <label>Cousin</label>
+      </ul>
+    </div>
+   </td>
+        </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.10: Four students ABCD are sitting one each at the four corners of a square, all facing the center of the square. The student E sitting ar the center is facing only C and the student A is sitting facing the back of E. If D is sitting on the right of E, where B will be sitting to E ?</p>
+      <ul>
+         a<input class="answer" type="radio" name="q10" value="-.5">
+         <label>B is on the right of E</label>
+         <br>
+         b<input class="answer" type="radio" name="q10" value="-.5">
+         <label>B is to the back of E</label>
+         <br>
+         c<input class="answer" type="radio" name="q10" value="-.5">
+         <label>A is facing B and E</label>
+         <br>
+         d<input class="answer" type="radio" name="q10" value="2">
+         <label  id="correctString10">B is sitting on the left of E</label>
+      </ul>
+    </div>
+   </td>
+ </tr>
+     <tr>
+   <td>
+    <div>
+     <p class="question">Que.11: If 56+26+38=46 and <br>
+        24+36+52=36, then <br>
+        79+55+28=?</p>
+      <ul>
+      a<input class="answer" type="radio" name="q11" value="2">
+         <label  id="correctString11">104</label>
+      <br>
+         b<input class="answer" type="radio" name="q11" value="-.5">
+         <label>200</label>
+         <br>
+         c<input class="answer" type="radio" name="q11" value="-.5">
+         <label>198</label>
+         <br>
+         d<input class="answer" type="radio" name="q11" value="-.5">
+         <label>176</label>
+      </ul>
+    </div>
+   </td>
+        </tr>
+        <tr>
+   <td>
+    <div>
+     <p class="question">Que.12:Arrange the following in ascending order:-  ?</p>
+        <ol>
+        <li>Centimeter</li>
+            <li>Kilometer</li>
+            <li>Decimeter</li>
+            <li>Meter</li>
+        </ol>
+      <ul>
+         a<input class="answer" type="radio" name="q12" value="2">
+         <label id="correctString12">1,3,4,2</label>
+         <br>
+         b<input class="answer" type="radio" name="q12" value="-.5">
+         <label>2,4,3,1</label>
+         <br>
+         c<input class="answer" type="radio" name="q12" value="-.5">
+         <label>3,1,2,4</label>
+         <br>
+         d<input class="answer" type="radio" name="q12" value="-.5">
+         <label>4,2,1,3</label>
+      </ul>
+    </div>
+   </td>
+ </tr>
+ <tr>
+   <td>
+    <div>
+     <p class="question">Que.13: Hema was twise as old as Geeta 10 years ago. How old Geeta today. If hema will be 40 years old henceforth?</p>
+      <ul>
+         a<input class="answer" type="radio" name="q13" value="-.5">
+         <label>25 years</label>
+         <br>
+         b<input class="answer" type="radio" name="q13" value="-.5">
+         <label>20 years</label>
+         <br>
+         c<input class="answer" type="radio" name="q13" value="-.5">
+         <label>10 years</label>
+         <br>
+         d<input class="answer" type="radio" name="q13" value="2">
+         <label id="correctString13">15 years</label>
+      </ul>
+  </div>
+   </td>
+         </tr><tr>
+   <td>
+    <div>
+     <p class="question">Que.14: In a birthday party of Nidhi, a baby girl, 40 person chose to kiss her and 25 shake hand with her. 10 person choose both kiss her and shake hand with her. How many people turned out in the Party?</p>
+      <ul>
+         a<input class="answer" type="radio" name="q14" value="-.5">
+         <label>35</label>
+         <br>
+         b<input class="answer" type="radio" name="q14" value="-.5">
+         <label>75.</label>
+         <br>
+         c<input class="answer" type="radio" name="q14" value="2">
+         <label id="correctString14">55</label>
+         <br>
+         d<input class="answer" type="radio" name="q14" value="-.5">
+         <label>25</label>
+      </ul>
+    </div>
+   </td>
+        </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.15: 13,40,122,369,___? </p>
+      <ul>
+         a<input class="answer" type="radio" name="q15" value="-.5">
+         <label>1110</label>
+         <br>
+         b<input class="answer" type="radio" name="q15" value="2">
+         <label id="correctString15">1111</label>
+         <br>
+         c<input class="answer" type="radio" name="q15" value="-.5">
+         <label>1112</label>
+         <br>
+         d<input class="answer" type="radio" name="q15" value="-.5">
+         <label>1113</label>
+      </ul>
+    </div>
+   </td>
+         </tr><tr>
+         <td>
+    <div>
+        <h2>Mathematics</h2>
+        <p class="question">Que.16:  A man is walking at a speed of 10Km/hr. After every km, he takes rest for 5 min. how much time will be take to cover a distance of 5 Km? </p>
+      <ul>
+         a<input class="answer" type="radio" name="q16" value="-.5">
+         <label>40 min</label>
+         <br>
+         b<input class="answer" type="radio" name="q16" value="-.5">
+         <label>45 min</label>
+         <br>
+         c<input class="answer" type="radio" name="q16" value="2">
+         <label>48 min.</label>
+         <br>
+         d<input class="answer" type="radio" name="q16" value="-.5">
+         <label id="correctString16"> 50 min</label>
+      </ul>
+    </div>
+   </td>
+         </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.17: A train travels 450kkm in 7 hours and another 740 km in 10 hours. Find the avg speed of the train.
+      <ul>
+         a<input class="answer" type="radio" name="q17" value="-.5">
+         <label>65Km</label>
+         <br>
+         b<input class="answer" type="radio" name="q17" value="2">
+         <label  id="correctString17">70 km</label>
+         <br>
+         c<input class="answer" type="radio" name="q17" value="-.5">
+         <label>130Km</label>
+         <br>
+         d<input class="answer" type="radio" name="q17" value="-.5">
+         <label>140Km</label>
+      </ul>
+    </div>
+   </td>
+         </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.18: If 46<sup>2</sup>&minus;44<sup>2</sup>=45p, then the value of 'p' will be .</p>
+      <ul>
+         a<input class="answer" type="radio" name="q18" value="-.5">
+         <label id="correctString18">4</label>
+         <br>
+         b<input class="answer" type="radio" name="q18" value="-.5">
+         <label>8</label>
+         <br>
+         c<input class="answer" type="radio" name="q18" value="2">
+         <label>10</label>
+         <br>
+         d<input class="answer" type="radio" name="q18" value="-.5">
+         <label>12</label>
+      </ul>
+    </div>
+   </td>
+        </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.19: Kamal can do a work in 15 days. Bimal is 50 per cent more efficient than Kamal in doing the work. In how many days will Bimal do that work ?</p>
+      <ul>
+         a<input class="answer" type="radio" name="q19" value="-.5">
+         <label>14 days</label>
+         <br>
+         b<input class="answer" type="radio" name="q19" value="-.5">
+         <label>12 days</label>
+         <br>
+         c<input class="answer" type="radio" name="q19" value="2">
+         <label id="correctString19">10 day</label>
+         <br>
+         d<input class="answer" type="radio" name="q19" value="-.5">
+         <label>15 days
+          </label>
+      </ul>
+    </div>
+   </td>
+        </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.20: Price of a refrigerator and a television set are in the ratio 5:3. If the refrigerator cost Rs 5500 more than he television set, then the price of refrigerator is</p>
+      <ul>
+         a<input class="answer" type="radio" name="q20" value="-.5">
+         <label>27500</label>
+         <br>
+         b<input class="answer" type="radio" name="q20" value="-.5">
+         <label>8250.</label>
+         <br>
+         c<input class="answer" type="radio" name="q20" value="2">
+         <label id="correctString20">13750</label>
+         <br>
+         d<input class="answer" type="radio" name="q20" value="-.5">
+         <label>16500</label>
+      </ul>
+    </div>
+   </td>
+ </tr>
+     <tr>
+   <td>
+    <div>
+     <p class="question">Que.21: A bag contained in a box consists of one rupee, 50 paise and 25 paise coins in the ratio 2:3:4. What is the number of 50 paise coins?</p>
+      <ul>
+      a<input class="answer" type="radio" name="q21" value="-.5">
+         <label>60</label>
+      <br>
+         b<input class="answer" type="radio" name="q21" value="2">
+         <label id="correctString21">120</label>
+         <br>
+         c<input class="answer" type="radio" name="q21" value="-.5">
+         <label>150</label>
+         <br>
+         d<input class="answer" type="radio" name="q21" value="-.5">
+         <label>180</label>
+      </ul>
+    </div>
+   </td>
+        </tr>
+        <tr>
+   <td>
+    <div>
+     <p class="question">Que.22: :</p>
+      <ul>
+         a<input class="answer" type="radio" name="q22" value="-.5">
+         <label>18 years</label>
+         <br>
+         b<input class="answer" type="radio" name="q22" value="2">
+         <label id="correctString22">12 years</label>
+         <br>
+         c<input class="answer" type="radio" name="q22" value="-.5">
+         <label>16 years</label>
+         <br>
+         d<input class="answer" type="radio" name="q22" value="-.5">
+         <label>24 years</label>
+      </ul>
+    </div>
+   </td>
+ </tr>
+ <tr>
+   <td>
+    <div>
+     <p class="question">Que.23: If 80% of X = 50% of Y and Y=a% of X, then the Value of 'a' is.</p>
+      <ul>
+         a<input class="answer" type="radio" name="q23" value="-.5">
+         <label>400</label>
+         <br>
+         b<input class="answer" type="radio" name="q23" value="-.5">
+         <label>300</label>
+         <br>
+         c<input class="answer" type="radio" name="q23" value="2">
+         <label id="correctString23">160</label>
+         <br>
+         d<input class="answer" type="radio" name="q23" value="-.5">
+         <label>150</label>
+      </ul>
+  </div>
+   </td>
+         </tr><tr>
+   <td>
+    <div>
+     <p class="question">Que.24: After allowing a discount of 10% on marked price a trader makes a profit of 15%.
+         The ratio of marked price and cost price ?</p>
+      <ul>
+         a<input class="answer" type="radio" name="q24" value="-.5">
+         <label>23 : 9</label>
+         <br>
+         b<input class="answer" type="radio" name="q24" value="-.5">
+         <label>23 : 10</label>
+         <br>
+         c<input class="answer" type="radio" name="q24" value="2">
+         <label id="correctString24">23 : 18</label>
+         <br>
+         d<input class="answer" type="radio" name="q24" value="-.5">
+         <label>23 : 19</label>
+      </ul>
+    </div>
+   </td>
+        </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.25: A man can row at 5 kmph. In still water. If the velocity of current is 1 kmph. and it takes him 1 hour to row a place and come back. How far is the place </p>
+      <ul>
+         a<input class="answer" type="radio" name="q25" value="-.5">
+         <label>2.8 Km</label>
+         <br>
+         b<input class="answer" type="radio" name="q25" value="-.5">
+         <label>3 Km</label>
+         <br>
+         c<input class="answer" type="radio" name="q25" value="2">
+         <label id="correctString25">2.4 Km</label>
+         <br>
+         d<input class="answer" type="radio" name="q25" value="-.5">
+         <label>2 km</label>
+      </ul>
+    </div>
+   </td>
+         </tr><tr>
+         <td>
+    <div>
+        <h2>General Knowledge</h2>
+     <p class="question">Que.26: Total number of members in Rajya Sabha?</p>
+      <ul>
+         a<input class="answer" type="radio" name="q26" value="2">
+         <label id="correctString26">245</label>
+         <br>
+         b<input class="answer" type="radio" name="q26" value="-.5">
+         <label>265</label>
+         <br>
+         c<input class="answer" type="radio" name="q26" value="-.5">
+         <label>90</label>
+         <br>
+         d<input class="answer" type="radio" name="q26" value="-.5">
+         <label>545</label>
+      </ul>
+    </div>
+   </td>
+         </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.27: In which state Taj Mahal Situated?</p>
+      <ul>
+         a<input class="answer" type="radio" name="q27" value="-.5">
+         <label>Punjab</label>
+         <br>
+         b<input class="answer" type="radio" name="q27" value="2">
+         <label  id="correctString27">Uttar Pradesh.</label>
+         <br>
+         c<input class="answer" type="radio" name="q27" value="-.5">
+         <label>Himachal</label>
+         <br>
+         d<input class="answer" type="radio" name="q27" value="-.5">
+         <label>Bihar</label>
+      </ul>
+    </div>
+   </td>
+         </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.28: Speed of light is</p>
+
+      <ul>
+         a<input class="answer" type="radio" name="q28" value="2">
+         <label id="correctString28">3 x 10<sup>8</sup> m/s</label>
+         <br>
+         b<input class="answer" type="radio" name="q28" value="-.5">
+         <label>6.22x10<sup>23</sup> m/s</label>
+         <br>
+         c<input class="answer" type="radio" name="q28" value="-.5">
+         <label>3x10<sup>12</sup> m/s</label>
+         <br>
+         d<input class="answer" type="radio" name="q28" value="-.5">
+         <label>300000 km/m</label>
+      </ul>
+    </div>
+   </td>
+        </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.29: Where is chilka Lake situated?</p>
+      <ul>
+         a<input class="answer" type="radio" name="q29" value="-.5">
+          <label>Kerala</label>
+         <br>
+         b<input class="answer" type="radio" name="q29" value="-.5">
+         <label>jammu and Kashmir</label>
+         <br>
+         c<input class="answer" type="radio" name="q29" value="2">
+         <label id="correctString29">Odhisha</label>
+         <br>
+         d<input class="answer" type="radio" name="q29" value="-.5">
+         <label>Kolkata</label>
+      </ul>
+    </div>
+   </td>
+        </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.30: Ozone layer found in?</p>
+      <ul>
+         a<input class="answer" type="radio" name="q30" value="-.5">
+         <label>Troposphere</label>
+         <br>
+         b<input class="answer" type="radio" name="q30" value="2">
+         <label id="correctString30">Stratosphere</label>
+         <br>
+         c<input class="answer" type="radio" name="q30" value="-.5">
+         <label>Ionosphere</label>
+         <br>
+         d<input class="answer" type="radio" name="q30" value="-.5">
+         <label>Mesosphere</label>
+      </ul>
+    </div>
+   </td>
+ </tr>
+ </table>
+<br/>
+  <div class="submitter">
+          <input class="quizSubmit" id="submitButton" onClick="submitQuiz()"
+          type="submit" value="Submit" />
+    </div>
+	
+	
+  
+<!--show only wrong answers on submit-->
+    <p>English</p>
+    <div class="quizAnswers" id="correctAnswer1"></div>
+     <div class="quizAnswers" id="correctAnswer2"></div>
+    <div class="quizAnswers" id="correctAnswer3"></div>
+    <div class="quizAnswers" id="correctAnswer4"></div>
+    <div class="quizAnswers" id="correctAnswer5"></div>
+    <div class="quizAnswers" id="correctAnswer6"></div>
+    <div class="quizAnswers" id="correctAnswer7"></div>
+    <p>Reasoning</p>
+    <div class="quizAnswers" id="correctAnswer8"></div>
+    <div class="quizAnswers" id="correctAnswer9"></div>
+    <div class="quizAnswers" id="correctAnswer10"></div>
+    <div class="quizAnswers" id="correctAnswer11"></div>
+     <div class="quizAnswers" id="correctAnswer12"></div>
+    <div class="quizAnswers" id="correctAnswer13"></div>
+    <div class="quizAnswers" id="correctAnswer14"></div>
+    <div class="quizAnswers" id="correctAnswer15"></div>
+    <p>Mathematics</p>
+    <div class="quizAnswers" id="correctAnswer16"></div>
+    <div class="quizAnswers" id="correctAnswer17"></div>
+    <div class="quizAnswers" id="correctAnswer18"></div>
+    <div class="quizAnswers" id="correctAnswer19"></div>
+    <div class="quizAnswers" id="correctAnswer20"></div>
+    <div class="quizAnswers" id="correctAnswer21"></div>
+     <div class="quizAnswers" id="correctAnswer22"></div>
+    <div class="quizAnswers" id="correctAnswer23"></div>
+    <div class="quizAnswers" id="correctAnswer24"></div>
+    <div class="quizAnswers" id="correctAnswer25"></div>
+    <p>General Knowledge</p>
+    <div class="quizAnswers" id="correctAnswer26"></div>
+    <div class="quizAnswers" id="correctAnswer27"></div>
+    <div class="quizAnswers" id="correctAnswer28"></div>
+    <div class="quizAnswers" id="correctAnswer29"></div>
+    <div class="quizAnswers" id="correctAnswer30"></div>
+    
+    
+<!--show score upon submit-->
+    <div>
+     <h2 class="quizScore" id="userScore"></h2>
+    </div>
+</body>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>window.onbeforeunload = function () {//Prevent Ctrl+W
+    return "Really want to quit the game?";
+};
+document.onkeydown = function (e) {
+    e = e || window.event;//Get event
+    if (e.ctrlKey) {
+        var c = e.which || e.keyCode;//Get key code
+        switch (c) {
+            case 83://Block Ctrl+S
+            case 85://Block Ctrl+W --Not work in Chrome
+                e.preventDefault();     
+                e.stopPropagation();
+            break;
+        }
+    }
+};
+    </script>
+<div id="countdown"></div>
+<div id="countdown2"></div>
+<script>
+function countdown( elementName, minutes, seconds )
+{
+    var element, endTime, hours, mins, msLeft, time;
+    function twoDigits( n )
+    {
+        return (n <= 9 ? "0" + n : n);
+    }
+    function updateTimer()
+    {
+        msLeft = endTime - (+new Date);
+        if ( msLeft < 1000 ) {
+            element.innerHTML = "Quiz Submitted Check Your Marks thanks. iascgl.com!";
+        } else {
+            time = new Date( msLeft );
+            hours = time.getUTCHours();
+            mins = time.getUTCMinutes();
+            element.innerHTML = (hours ? hours + ':' + twoDigits( mins ) : mins) + ':' + twoDigits( time.getUTCSeconds() );
+            setTimeout( updateTimer, time.getUTCMilliseconds() + 500 );
+        }
+    }
+    element = document.getElementById( elementName );
+    endTime = (+new Date) + 1000 * (60*minutes + seconds) + 500;
+    updateTimer();
+}
+countdown( "countdown", 18, 0 );
+    
+</script>
+	<script type="text/javascript"> 
+function disableselect(e){  
+return false  
+}  
+function reEnable(){  
+return true  
+}  
+//if IE4+  
+document.onselectstart=new Function ("return false")  
+document.oncontextmenu=new Function ("return false")  
+//if NS6  
+if (window.sidebar){  
+document.onmousedown=disableselect  
+document.onclick=reEnable  
+}
+</script>
+<script>
+// scripts here:
+window.onload = function submitQuiz(){
+//Code for Timer	
+		var seconds_left = 10800;
+var interval = setInterval(function() {
+    document.getElementById('timer_div').innerHTML = "00:"+ (--seconds_left);
+    if (seconds_left <= 0)
+    {
+        clearInterval(interval);
+        document.getElementById('timer_div').innerHTML = 'Yours TimeOut...';
+    }
+}, 10);
+		setTimeout(function(){document.getElementById('submitButton').click(); }, 18*60000);
+ 
+};
+ function submitQuiz() {
+          
+  console.log('submitted');
+ // get each answer score
+  function answerScore (qName) {
+   var radiosNo = document.getElementsByName(qName);
+   for (var i = 0, length = radiosNo.length; i < length; i++) {
+       if (radiosNo[i].checked) {
+   // do something with radiosNo
+     var answerValue = Number(radiosNo[i].value);
+    }
+   }
+   // change NaNs to zero
+   if (isNaN(answerValue)) {
+    answerValue = 0;
+   }
+   return answerValue;
+  }
+ // calc score with answerScore function
+  var calcScore = (answerScore('q1') + answerScore('q2') + answerScore('q3') + answerScore('q4')  + answerScore('q5')  + answerScore('q6')  + answerScore('q7')  + answerScore('q8') + answerScore('q9') + answerScore('q10') + answerScore('q11') + answerScore('q12') + answerScore('q13') + answerScore('q14')  + answerScore('q15')  + answerScore('q16')  + answerScore('q17')  + answerScore('q18') + answerScore('q19') + answerScore('q20') + answerScore('q21') + answerScore('q22') + answerScore('q23') + answerScore('q24')  + answerScore('q25')  + answerScore('q26')  + answerScore('q27')  + answerScore('q28') + answerScore('q29') + answerScore('q30'));
+  console.log("CalcScore: " + calcScore); // it works!
+ // function to return correct answer string
+  function correctAnswer (correctStringNo, qNumber) {
+   console.log("qNumber: " + qNumber);  // logs 1,2,3,4 after called below
+   return ("The correct answer for question #" + qNumber + ": &nbsp;<strong>" +
+    (document.getElementById(correctStringNo).innerHTML) + "</strong>");
+   }
+ // print correct answers only if wrong (calls correctAnswer function)
+  if (answerScore('q1') === -.5) {
+   document.getElementById('correctAnswer1').innerHTML = correctAnswer('correctString1', 1);
+  }
+  if (answerScore('q2') === -.5) {
+   document.getElementById('correctAnswer2').innerHTML = correctAnswer('correctString2', 2);
+  }
+  if (answerScore('q3') === -.5) {
+   document.getElementById('correctAnswer3').innerHTML = correctAnswer('correctString3', 3);
+  }
+  if (answerScore('q4') === -.5) {
+   document.getElementById('correctAnswer4').innerHTML = correctAnswer('correctString4', 4);
+  }
+        if (answerScore('q5') === -.5) {
+   document.getElementById('correctAnswer5').innerHTML = correctAnswer('correctString5', 5);
+  }
+        if (answerScore('q6') === -.5) {
+   document.getElementById('correctAnswer6').innerHTML = correctAnswer('correctString6', 6);
+  }
+        if (answerScore('q7') === -.5) {
+   document.getElementById('correctAnswer7').innerHTML = correctAnswer('correctString7', 7);
+  }
+        if (answerScore('q8') === -.5) {
+   document.getElementById('correctAnswer8').innerHTML = correctAnswer('correctString8', 8);
+  
+  }
+     if (answerScore('q9') === -.5) {
+   document.getElementById('correctAnswer9').innerHTML = correctAnswer('correctString9', 9);
+  
+  }
+     if (answerScore('q10') === -.5) {
+   document.getElementById('correctAnswer10').innerHTML = correctAnswer('correctString10', 10);
+  
+  }
+if (answerScore('q11') === -.5) {
+   document.getElementById('correctAnswer11').innerHTML = correctAnswer('correctString11', 11);
+  }
+  if (answerScore('q12') === -.5) {
+   document.getElementById('correctAnswer12').innerHTML = correctAnswer('correctString12', 12);
+  }
+  if (answerScore('q13') === -.5) {
+   document.getElementById('correctAnswer13').innerHTML = correctAnswer('correctString13', 13);
+  }
+  if (answerScore('q14') === -.5) {
+   document.getElementById('correctAnswer14').innerHTML = correctAnswer('correctString14', 14);
+  }
+        if (answerScore('q15') === -.5) {
+   document.getElementById('correctAnswer15').innerHTML = correctAnswer('correctString15', 15);
+  }
+        if (answerScore('q16') === -.5) {
+   document.getElementById('correctAnswer16').innerHTML = correctAnswer('correctString16', 16);
+  }
+        if (answerScore('q17') === -.5) {
+   document.getElementById('correctAnswer17').innerHTML = correctAnswer('correctString17', 17);
+  }
+        if (answerScore('q18') === -.5) {
+   document.getElementById('correctAnswer18').innerHTML = correctAnswer('correctString18', 18);
+  
+  }
+     if (answerScore('q19') === -.5) {
+   document.getElementById('correctAnswer19').innerHTML = correctAnswer('correctString19', 19);
+  
+  }
+     if (answerScore('q20') === -.5) {
+   document.getElementById('correctAnswer20').innerHTML = correctAnswer('correctString20', 20);
+  
+  }
+     if (answerScore('q21') === -.5) {
+   document.getElementById('correctAnswer21').innerHTML = correctAnswer('correctString21', 21);
+  }
+  if (answerScore('q22') === -.5) {
+   document.getElementById('correctAnswer22').innerHTML = correctAnswer('correctString22', 22);
+  }
+  if (answerScore('q23') === -.5) {
+   document.getElementById('correctAnswer23').innerHTML = correctAnswer('correctString23', 23);
+  }
+  if (answerScore('q24') === -.5) {
+   document.getElementById('correctAnswer24').innerHTML = correctAnswer('correctString24', 24);
+  }
+        if (answerScore('q25') === -.5) {
+   document.getElementById('correctAnswer25').innerHTML = correctAnswer('correctString25', 25);
+  }
+        if (answerScore('q26') === -.5) {
+   document.getElementById('correctAnswer26').innerHTML = correctAnswer('correctString26', 26);
+  }
+        if (answerScore('q27') === -.5) {
+   document.getElementById('correctAnswer27').innerHTML = correctAnswer('correctString27', 27);
+  }
+        if (answerScore('q28') === -.5) {
+   document.getElementById('correctAnswer28').innerHTML = correctAnswer('correctString28', 28);
+  
+  }
+     if (answerScore('q29') === -.5) {
+   document.getElementById('correctAnswer29').innerHTML = correctAnswer('correctString29', 29);
+  
+  }
+     if (answerScore('q30') === -.5) {
+   document.getElementById('correctAnswer30').innerHTML = correctAnswer('correctString30', 30);
+  
+  }
+ // calculate "possible score" integer
+  var questionCountArray = document.getElementsByClassName('question');
+  var questionCounter = 0;
+  for (var i = 0, length = questionCountArray.length; i < length; i++) {
+   questionCounter++;
+  }
+ // show score as "score/possible score"
+  var showScore = "Your Score: " + calcScore +"/" + 2*questionCounter;
+ // if 4/4, "perfect score!"
+  if (calcScore === 2*questionCounter) {
+   showScore = showScore + "&nbsp; <strong>Perfect Score!</strong>"
+  };
+  document.getElementById('userScore').innerHTML = showScore;
+ }
+$(document).ready(function() {
+ $('#submitButton').click(function() {
+  $(this).addClass('hide');
+ });
+});
+</script>
+<div align="center">
+<body>
+    <a onclick="showText('text1','text2')" href="javascript:void(0);">
+        <button>Explain</button>
+    </div> </a>
+<div id="text1" class="hide"><ol>
+    <p>English</p>
+    <li>b) Use 'is' in place of 'are'. The noun/pronoun following 'neither' is plural, but the verb following the noun/pronoun must be singular. </li>
+    <li>a) Change 'If she would have come to me' into 'If she had come to me'.</li>
+    <li>b) 'Bade (V<sub>2</sub> of bid)' take 'plain infinitive' (V<sub>1</sub>) after it and not 'infinitive' (to+V<sub>1</sub>) change 'to submit' into 'submit'.</li>
+    <li>a) </li>
+    <li>d) Called forth.</li>
+    <li>c) Common.</li>
+    <li>b) to take the heart</li>
+    <p>Reasoning</p>
+    <li>a) </li>
+    <li>b)</li>
+    <li>d)</li>
+    <li>a)</li>
+    <li>a)</li>
+    <li>d)</li>
+    <li>c)</li>
+    <li>b)</li>
+    <p>Math</p>
+    <li>d)</li>
+    <li>b)</li>
+    <li>a)</li>
+    <li>c)</li>
+    <li>c)</li>
+    <li>b)</li>
+    <li>b)</li>
+    <li>c)</li>
+    <li>c)</li>
+    <li>c)</li>
+    <p>General Knowledge</p>
+    <li>a). Total Number of Rajya Sabha Members are 245</li>
+    <li>b) Taj Mahal Situated in Agra.</li>
+    <li>a) Speed of light is 3x10<sup>8</sup> m/s.</li>
+    <li>c) Chilka lake is situated in Odhisha </li>
+    <li>b) Ozone layer found in Stratosphere .</li>
+    </ol></div>
+    <br>
+    <strong>
+    This content is Copyright of IASCGL.COM 
+        <div align="right">All right reserved</strong></div>
+    
+<!--show score upon submit-->
+  
+ 
+</body>
+<style>
+div.hide { display:none; [your properties]; }
+div.show { [your properties]; }
+</style>
+<script>
+function showText(show,hide)
+{
+    document.getElementById(show).className = "show";
+    document.getElementById(hide).className = "hide";
+}
+    </script></div>
