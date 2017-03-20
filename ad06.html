@@ -1,0 +1,590 @@
+
+<style>
+/* css here */
+{
+  border: 1px dotted black;
+}
+p.question {
+  font-family: Arial, sans-serif;
+   font-size:16px;
+  color: #2E2E2E;
+  margin-bottom:0px;
+}
+h2.quizHeader {
+  font-family: Arial, sans-serif;
+  font-weight:normal;
+  font-size:25px;
+  line-height: 27px;
+  margin: 24px 0 12px 0;
+  padding: 0 0 4px 0;
+  border-bottom: 1px solid #a2a2a2;
+}
+h2.quizScore{
+  font-family: Arial, sans-serif;
+  font-size:25px;
+}
+div.quizAnswers{
+  font-family: Arial, sans-serif;
+  font-size:16px;
+  color: #424242;
+  padding: 4px 0 4px 0;
+}
+label {
+  font-family: Arial, sans-serif;
+  font-size:14px;
+  color: #424242;
+  vertical-align:top;
+}
+input.answer[type="radio"] {
+  margin-bottom: 10px;
+}
+input.quizSubmit[type="submit"] {
+  -webkit-background-clip: border-box;
+  -webkit-background-origin: padding-box;
+  -webkit-background-size: auto;
+  -webkit-transition-delay: 0s, 0s;
+  -webkit-transition-duration: 0.2s, 0.2s;
+  -webkit-transition-property: color, background-color;
+  -webkit-transition-timing-function: ease, ease;
+  box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 5px 0px;
+  color: #ffffff;
+  background-color: #c30b0a;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  text-transform:uppercase;
+  height:35px;
+  width:85px;
+  border: 1px solid #5E5E5E;
+  border-radius:5px;
+  
+ }
+input.quizSubmit[type="submit"]:hover {
+  color: #ffffff;
+  background: #680f11;
+  text-decoration: none;
+}
+table {
+  background-color: #FFFFF;
+   border:1px solid #BDBDBD;
+  border-radius:5px;
+  padding:10px;
+  padding-left:25px;
+  box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 1px 0px;
+}
+th {
+  
+}
+tr {
+  
+}
+td {
+}
+.submitter {
+   width:85px;
+}
+.hide {
+   display:none;
+}
+.frac {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle; 
+    letter-spacing: 0.001em;
+    text-align: center;
+    
+    }
+.frac > span { 
+    display: block; 
+    padding: 0.1em; 
+    }
+.frac span.bottom {border-top: thin solid black;}
+.frac span.symbol {display: none;}
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+/*SFS light red = #c30b0a;
+SFS dark red = #9f2026; */
+</style>
+<body><div class="navbar">
+    
+  
+    <a href="http://www.iascgl.com/" target="_blank">Home</a>
+    <a href="#"><div id="countdown"></div></a>
+</div><br><Br><br>
+    <div align="center">
+    <img src="http://4.bp.blogspot.com/-MwY805Xr2Gk/WLcUUQLJrcI/AAAAAAAADuo/wjqSRiNirawWZV3LJo2xuTh6eLURRmHwACK4B/s1600/2.jpg" width="350px" height="85px"><br>
+</div>
+  <h2 class="quizHeader">UPSC MOCK TEST(Quiz)</h2>
+  
+ 
+ 
+       <p>Mark for each correct answer is 3 and for incorrect 1/3rd score will be deducted ie 1. </p>
+<p>	       <strong>Maximum Marks is 30</strong></p>&nbsp;&nbsp;
+ <table style="width:100%">
+ <tr>
+   <td>
+       <div>
+     <p class="question">Que.1: Consider the following .</p>
+<p></p>
+           <ol>
+           <li>Dravidian is the oldest family of languages of India</li>
+               <li>Pali is an Indo-Aryan Language.</li>
+               <li>Tamil is a Dravidian Language</li>
+               </ol>
+      <ul>
+      a<input class="answer" type="radio" name="q1" value="3">
+         <label  id="correctString1">2 and 3</label>
+      <br>
+         b<input class="answer" type="radio" name="q1" value="-1">
+         <label>1 only</label>
+         <br>
+         c<input class="answer" type="radio" name="q1" value="-1">
+         <label>3 only</label>
+         <br>
+         d<input class="answer" type="radio" name="q1" value="-1">
+         <label>1 and 3</label>
+      </ul>
+    </div>
+     </td>
+        </tr>
+        <tr>
+   <td>
+    <div>
+     <p class="question">Que.2: Consider the following:</p>
+        <ol>
+            <li>A minister can participate in the proceedings of the house, of which he is not a member.</li>
+            <li>A person can be remain a minister for 6 months, without being a member of either house.</li>
+            <li>Attorney General of India can take part in the proccedings of Lower house only.</li>
+        </ol>
+      <ul>
+         a<input class="answer" type="radio" name="q2" value="-1">
+         <label>2 only</label>
+         <br>
+         b<input class="answer" type="radio" name="q2" value="-1">
+         <label>2 and 3 </label>
+         <br>
+         c<input class="answer" type="radio" name="q2" value="3">
+         <label  id="correctString2">1 and 2</label>
+         <br>
+         d<input class="answer" type="radio" name="q2" value="-1">
+         <label>1 only</label>
+      </ul>
+    </div>
+   </td>
+ </tr>
+ <tr>
+   <td>
+    <div>
+     <p class="question">Que.3: Consider the following about Pradhan Mantri Jan Dhan Yojna(PMJDY).</p>
+        
+        <ol>
+            <li>PMJDY is launched on the 15th Aug 2015</li>
+            <li>Provide an overdraft facility of Rs 5000 </li>
+            <li>Rupay Debit card provided to the beneficiaries.</li>
+        </ol>
+      <ul>
+         a<input class="answer" type="radio" name="q3" value="-1">
+         <label>1 only</label>
+         <br>
+         b<input class="answer" type="radio" name="q3" value="-1">
+         <label>3 only</label>
+         <br>
+         c<input class="answer" type="radio" name="q3" value="3">
+         <label id="correctString3">2 and 3</label>
+         <br>
+         d<input class="answer" type="radio" name="q3" value="-1">
+         <label>1, 2 and 3</label>
+      </ul>
+  </div>
+   </td>
+         </tr><tr>
+   <td>
+    <div>
+     <p class="question">Que.4: Tuberculosis is caused by.</p>
+      <ul>
+         a<input class="answer" type="radio" name="q4" value="-1">
+         <label>Virus</label>
+         <br>
+         b<input class="answer" type="radio" name="q4" value="3">
+         <label id="correctString4">Bacteria.</label>
+         <br>
+         c<input class="answer" type="radio" name="q4" value="-1">
+         <label>Fungi</label>
+         <br>
+         d<input class="answer" type="radio" name="q4" value="-1">
+         <label>Protozoans.</label>
+      </ul>
+    </div>
+   </td>
+        </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.5: Consider the following states. </p>
+        <ol>
+            <li>Himachal</li>
+            <li>Karnataka</li>
+            <li>Rajsthan</li>
+            <li>Punjab</li>
+        </ol>
+        <p>In which of the above state do 'Tropical Throne Forest' occur ?</p>
+      <ul>
+         a<input class="answer" type="radio" name="q5" value="-1">
+         <label>1 only</label>
+         <br>
+         b<input class="answer" type="radio" name="q5" value="-1">
+         <label>1 and 4</label>
+         <br>
+         c<input class="answer" type="radio" name="q5" value="-1">
+         <label>3 only</label>
+         <br>
+         d<input class="answer" type="radio" name="q5" value="3">
+         <label id="correctString5">2 and 3</label>
+      </ul>
+    </div>
+   </td>
+         </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.6: Largest river of Asia is...</p>
+            
+      <ul>
+         a<input class="answer" type="radio" name="q6" value="-1">
+         <label>Brahmputra</label>
+         <br>
+         b<input class="answer" type="radio" name="q6" value="-1">
+         <label>Yangtze</label>
+         <br>
+         c<input class="answer" type="radio" name="q6" value="3">
+         <label id="correctString6">Wonderful</label>
+         <br>
+         d<input class="answer" type="radio" name="q6" value="-1">
+         <label>Cosmopolitan</label>
+      </ul>
+    </div>
+   </td>
+         </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.7: Consider the following.</p>
+        <ol>
+            <li>Trade winds blow from the sub-tropical high pressure belts to the equatorial low pressure belt</li>
+            <li>The permanent winds blow from the sub-troical high pressure belt to sub-polar high pressure belt</li>
+            <li>Polar winds blow from polar high pressure region to the sub polar low pressure regions.</li>
+        </ol>
+           
+            
+      <ul>
+         a<input class="answer" type="radio" name="q7" value="-1">
+         <label>1 only</label>
+         <br>
+         b<input class="answer" type="radio" name="q7" value="-1">
+         <label>2 only</label>
+         <br>
+         c<input class="answer" type="radio" name="q7" value="-1">
+         <label>1 and 2</label>
+         <br>
+         d<input class="answer" type="radio" name="q7" value="3">
+         <label id="correctString7">1 and 3</label>
+      </ul>
+    </div>
+   </td>
+     </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.8: The First Jaina Council was held in ?</p>
+      <ul>
+         a<input class="answer" type="radio" name="q8" value="3">
+         <label  id="correctString8">Patliputra</label>
+         <br>
+         b<input class="answer" type="radio" name="q8" value="-1">
+         <label>Vaishali</label>
+         <br>
+         c<input class="answer" type="radio" name="q8" value="-1">
+         <label>Valabhi</label>
+         <br>
+         d<input class="answer" type="radio" name="q8" value="-1">
+         <label>Sarnath</label>
+      </ul>
+    </div>
+   </td>
+        </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.9: Which of the following Pair is not correctly matched? </p>
+      <ul>
+         a<input class="answer" type="radio" name="q9" value="-1">
+         <label>First Anglo Burmese War &nbsp; &nbsp;: Lord Amherst</label>
+         <br>
+         b<input class="answer" type="radio" name="q9" value="3">
+         <label id="correctString9">First Anglo-Aghan war &nbsp; &nbsp; &nbsp; &nbsp;: Lord Clive </label>
+         <br>
+         c<input class="answer" type="radio" name="q9" value="-1">
+         <label>Third Anglo-Burmese War &nbsp;: Lord Dufferin</label>
+         <br>
+         d<input class="answer" type="radio" name="q9" value="-1">
+         <label>Anglo-Nepalese War &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : Lord Hasting</label>
+      </ul>
+    </div>
+   </td>
+        </tr><tr>
+         <td>
+    <div>
+     <p class="question">Que.10: Who was the founder of Khilji Dynasty?</p>
+      <ul>
+         a<input class="answer" type="radio" name="q10" value="-1">
+         <label>Alu-ud-din-Khilji</label>
+         <br>
+         b<input class="answer" type="radio" name="q10" value="-1">
+         <label>Khusro Khan</label>
+         <br>
+         c<input class="answer" type="radio" name="q10" value="-1">
+         <label>Jalal-ud-din-khilji</label>
+         <br>
+         d<input class="answer" type="radio" name="q10" value="3">
+         <label  id="correctString10">Ghazi Khan</label>
+      </ul>
+    </div>
+   </td>
+ </tr>
+ </table>
+<br/>
+  <div class="submitter">
+          <input class="quizSubmit" id="submitButton" onClick="submitQuiz()"
+          type="submit" value="Submit" />
+    </div>
+	
+	
+  
+<!--show only wrong answers on submit-->
+    <div class="quizAnswers" id="correctAnswer1"></div>
+     <div class="quizAnswers" id="correctAnswer2"></div>
+    <div class="quizAnswers" id="correctAnswer3"></div>
+    <div class="quizAnswers" id="correctAnswer4"></div>
+    <div class="quizAnswers" id="correctAnswer5"></div>
+    <div class="quizAnswers" id="correctAnswer6"></div>
+    <div class="quizAnswers" id="correctAnswer7"></div>
+    <div class="quizAnswers" id="correctAnswer8"></div>
+    <div class="quizAnswers" id="correctAnswer9"></div>
+    <div class="quizAnswers" id="correctAnswer10"></div>
+    
+    
+<!--show score upon submit-->
+    <div>
+     <h2 class="quizScore" id="userScore"></h2>
+    </div>
+</body>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>window.onbeforeunload = function () {//Prevent Ctrl+W
+    return "Really want to quit the game?";
+};
+document.onkeydown = function (e) {
+    e = e || window.event;//Get event
+    if (e.ctrlKey) {
+        var c = e.which || e.keyCode;//Get key code
+        switch (c) {
+            case 83://Block Ctrl+S
+            case 85://Block Ctrl+W --Not work in Chrome
+                e.preventDefault();     
+                e.stopPropagation();
+            break;
+        }
+    }
+};
+    </script>
+<div id="countdown"></div>
+<div id="countdown2"></div>
+<script>
+function countdown( elementName, minutes, seconds )
+{
+    var element, endTime, hours, mins, msLeft, time;
+    function twoDigits( n )
+    {
+        return (n <= 9 ? "0" + n : n);
+    }
+    function updateTimer()
+    {
+        msLeft = endTime - (+new Date);
+        if ( msLeft < 1000 ) {
+            element.innerHTML = "Quiz Submitted Check Your Marks thanks. iascgl.com!";
+        } else {
+            time = new Date( msLeft );
+            hours = time.getUTCHours();
+            mins = time.getUTCMinutes();
+            element.innerHTML = (hours ? hours + ':' + twoDigits( mins ) : mins) + ':' + twoDigits( time.getUTCSeconds() );
+            setTimeout( updateTimer, time.getUTCMilliseconds() + 500 );
+        }
+    }
+    element = document.getElementById( elementName );
+    endTime = (+new Date) + 1000 * (60*minutes + seconds) + 500;
+    updateTimer();
+}
+countdown( "countdown", 10, 0 );
+    
+</script>
+	<script type="text/javascript"> 
+function disableselect(e){  
+return false  
+}  
+function reEnable(){  
+return true  
+}  
+//if IE4+  
+document.onselectstart=new Function ("return false")  
+document.oncontextmenu=new Function ("return false")  
+//if NS6  
+if (window.sidebar){  
+document.onmousedown=disableselect  
+document.onclick=reEnable  
+}
+</script>
+<script>
+// scripts here:
+window.onload = function submitQuiz(){
+//Code for Timer	
+		var seconds_left = 10800;
+var interval = setInterval(function() {
+    document.getElementById('timer_div').innerHTML = "00:"+ (--seconds_left);
+    if (seconds_left <= 0)
+    {
+        clearInterval(interval);
+        document.getElementById('timer_div').innerHTML = 'Yours TimeOut...';
+    }
+}, 10);
+		setTimeout(function(){document.getElementById('submitButton').click(); }, 10*60000);
+ 
+};
+ function submitQuiz() {
+          
+  console.log('submitted');
+ // get each answer score
+  function answerScore (qName) {
+   var radiosNo = document.getElementsByName(qName);
+   for (var i = 0, length = radiosNo.length; i < length; i++) {
+       if (radiosNo[i].checked) {
+   // do something with radiosNo
+     var answerValue = Number(radiosNo[i].value);
+    }
+   }
+   // change NaNs to zero
+   if (isNaN(answerValue)) {
+    answerValue = 0;
+   }
+   return answerValue;
+  }
+ // calc score with answerScore function
+  var calcScore = (answerScore('q1') + answerScore('q2') + answerScore('q3') + answerScore('q4')  + answerScore('q5')  + answerScore('q6')  + answerScore('q7')  + answerScore('q8') + answerScore('q9') + answerScore('q10'));
+  console.log("CalcScore: " + calcScore); // it works!
+ // function to return correct answer string
+  function correctAnswer (correctStringNo, qNumber) {
+   console.log("qNumber: " + qNumber);  // logs 1,2,3,4 after called below
+   return ("The correct answer for question #" + qNumber + ": &nbsp;<strong>" +
+    (document.getElementById(correctStringNo).innerHTML) + "</strong>");
+   }
+ // print correct answers only if wrong (calls correctAnswer function)
+  if (answerScore('q1') === -1) {
+   document.getElementById('correctAnswer1').innerHTML = correctAnswer('correctString1', 1);
+  }
+  if (answerScore('q2') === -1) {
+   document.getElementById('correctAnswer2').innerHTML = correctAnswer('correctString2', 2);
+  }
+  if (answerScore('q3') === -1) {
+   document.getElementById('correctAnswer3').innerHTML = correctAnswer('correctString3', 3);
+  }
+  if (answerScore('q4') === -1) {
+   document.getElementById('correctAnswer4').innerHTML = correctAnswer('correctString4', 4);
+  }
+        if (answerScore('q5') === -1) {
+   document.getElementById('correctAnswer5').innerHTML = correctAnswer('correctString5', 5);
+  }
+        if (answerScore('q6') === -1) {
+   document.getElementById('correctAnswer6').innerHTML = correctAnswer('correctString6', 6);
+  }
+        if (answerScore('q7') === -1) {
+   document.getElementById('correctAnswer7').innerHTML = correctAnswer('correctString7', 7);
+  }
+        if (answerScore('q8') === -1) {
+   document.getElementById('correctAnswer8').innerHTML = correctAnswer('correctString8', 8);
+  
+  }
+     if (answerScore('q9') === -1) {
+   document.getElementById('correctAnswer9').innerHTML = correctAnswer('correctString9', 9);
+  
+  }
+     if (answerScore('q10') === -1) {
+   document.getElementById('correctAnswer10').innerHTML = correctAnswer('correctString10', 10);
+  
+  }
+ // calculate "possible score" integer
+  var questionCountArray = document.getElementsByClassName('question');
+  var questionCounter = 0;
+  for (var i = 0, length = questionCountArray.length; i < length; i++) {
+   questionCounter++;
+  }
+ // show score as "score/possible score"
+  var showScore = "Your Score: " + calcScore +"/" + 3*questionCounter;
+ // if 4/4, "perfect score!"
+  if (calcScore === 3*questionCounter) {
+   showScore = showScore + "&nbsp; <strong>Perfect Score!</strong>"
+  };
+  document.getElementById('userScore').innerHTML = showScore;
+ }
+$(document).ready(function() {
+ $('#submitButton').click(function() {
+  $(this).addClass('hide');
+ });
+});
+</script>
+<div align="center">
+<body>
+    <a onclick="showText('text1','text2')" href="javascript:void(0);">
+        <button>Explain</button>
+    </div> </a>
+<div id="text1" class="hide"><p>
+    Ans.3:PMJDY is launched on the 15th Aug 2014 <br>
+    Ans.4: Tuberculosis is caused by Mycovacterium tuberculosis an irregular rod shaped bacteria.<br>
+    Ans.6: Yangtze(China) is the largest river of Asia.
+    <br>
+    Ans.7: The Permanent winds blows from the sub-tropical high pressure belt to sub polar low pressure belts.
+    <br>
+    
+    </p></div>
+    <br>
+    <strong>
+    This content is Copyright of IASCGL.COM 
+        <div align="right">All right reserved</strong></div>
+    
+<!--show score upon submit-->
+  
+ 
+</body>
+<style>
+div.hide { display:none; [your properties]; }
+div.show { [your properties]; }
+</style>
+<script>
+function showText(show,hide)
+{
+    document.getElementById(show).className = "show";
+    document.getElementById(hide).className = "hide";
+}
+    </script></div>
