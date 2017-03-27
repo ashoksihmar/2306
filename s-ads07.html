@@ -215,7 +215,7 @@ function PopulateResultStatics()
     
     /* Sets results Statistics info.  */
     var tmpResStat = $('#divResultStatistics').html();
-    tmpResStat = tmpResStat.replace('[XX/XX]' , (2*intCorrectAnswerCount - 0.5*intWrongAnswerCount) + '/' + intTotalQuestions);
+    tmpResStat = tmpResStat.replace('[XX/XX]' , (2*intCorrectAnswerCount - 0.5*intWrongAnswerCount) + '/' + 2*intTotalQuestions);
     tmpResStat = tmpResStat.replace('[TQ]'    , intTotalQuestions);
     tmpResStat = tmpResStat.replace('[TC]'    , intCorrectAnswerCount);
     tmpResStat = tmpResStat.replace('[TI]'    , intWrongAnswerCount);
