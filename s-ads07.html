@@ -1,0 +1,2072 @@
+
+
+<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+
+<!--<meta charset="utf-8" content="utf-8">-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="http://www.iascgl.ga/style.css" type="text/css" rel="stylesheet" media="screen" />
+<script src="http://www.iascgl.ga/ads.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<div>
+
+     <!--[if IE]><div class="inner-page-ie"><![endif]-->
+    
+        
+        
+        
+       <input id="hdnTitleID" type="hidden" value="7" />
+        
+           
+        
+        <h1>IASCGL.COM</h1>
+        
+        
+        <div>
+            <span id="idTimerSpan" style="color:red; display:none; padding-left:15px">Time Left: <b id="idTimerLCD">00:18:00</b></span>
+        <input type="hidden" id="hdnTestTitleID"   value="9" />
+        <input type="hidden" id="hdnTestID"        value="1009" />
+        <input type="hidden" id="hdnInitialTimer"  value="1080" />
+        <input type="hidden" id="hdnTimer"         value="1080" />
+        </div>
+        
+        <div>
+            
+<script type="text/javascript" charset="utf-8"> 
+function LoadTestRunnerPage()
+{
+    GeneralTestPageSpecificLoad();
+    $('#divLoading').remove();
+    $('#divStartTestInstruction').show();    
+}
+
+var _timerHandler = 0;
+var _txtTestStats = ''; /* Result Stats append with feedback text */
+
+function GeneralTestPageSpecificLoad()
+{         
+    $(".result-option").click(  function(){  OptionClickHandler(this);           });
+    
+    $("a.jq-menu").click(       function(){  TestTabMenuClickHandler(this);      });
+    
+    $('#btnStartTest').click(   function(){  StartTestButtonClickHandler(this);  });
+    
+    $('#btnSubmitTest').click(  function(){  SubmitTestButtonClickHandler(this); });
+   
+    InitializeTestPage();
+}
+
+function InitializeTestPage()
+{
+    LoadOtherPageSpecificFunctions();    
+    $('#divTabContent').hide();                    /* Initially hides the Test questions, Shows 'Start Test' button.*/
+    $('#btnSubmitTest').attr('disabled', 'disabled');
+}
+
+function LoadOtherPageSpecificFunctions()
+{
+    /* Invoke : Other Page Specific Functions  */
+    var txtTestTitleID  = $('#hdnTestTitleID').val();
+    if(txtTestTitleID == '2') TechnicalCPageSpecificFunctionsLoad();   /* c-programming.js */                                            
+    if(txtTestTitleID == '13') TechnicalJavaPageSpecificFunctionsLoad();   /* java-programming.js */                                            
+    /*  
+        define( "IB_APTITUDE_ID"         , 1 );
+        define( "IB_C_PROGRAMMING_ID"    , 2 ); 
+        define( "IB_VERBAL_ABILITY_ID"   , 3 );  
+        define( "IB_VERBAL_RESONING_ID"  , 4 );  
+        define( "IB_LOGICAL_RESONING_ID" , 5 ); 
+        define( "IB_JAVA_PROGRAMMING_ID"    , 13 );  
+     */
+}
+
+function SubmitTestButtonClickHandler(thisObj)
+{
+    var txtMsg = '';
+    var intUAC = $("input.jq-selected-answer[value='']").length;
+    if( intUAC > 0) txtMsg = "Total number of unanswered questions = " + intUAC + ".\n\n" ;
+    
+    if(confirm(txtMsg + 'Are you sure you want to submit the Test now?'))  /* Check for Time limit also. */
+    {
+        $(thisObj).attr('disabled', 'disabled');
+        PopulateResultStatics();
+    }
+}
+
+var _0x3dee=["","\x68\x74\x6D\x6C","\x23\x64\x69\x76\x52\x65\x73\x75\x6C\x74","\x64\x69\x73\x61\x62\x6C\x65\x64","\x72\x65\x6D\x6F\x76\x65\x41\x74\x74\x72","\x2E\x72\x65\x73\x75\x6C\x74\x2D\x6F\x70\x74\x69\x6F\x6E","\x63\x68\x65\x63\x6B\x65\x64","\x76\x61\x6C","\x23\x68\x64\x6E\x49\x6E\x69\x74\x69\x61\x6C\x54\x69\x6D\x65\x72","\x23\x68\x64\x6E\x54\x69\x6D\x65\x72","\x72\x65\x6D\x6F\x76\x65","\x23\x64\x69\x76\x49\x6E\x69\x74\x69\x61\x74\x6F\x72","\x23\x62\x74\x6E\x53\x75\x62\x6D\x69\x74\x54\x65\x73\x74","\x73\x68\x6F\x77","\x23\x64\x69\x76\x53\x75\x62\x6D\x69\x74\x54\x65\x73\x74","\x23\x64\x69\x76\x54\x61\x62\x43\x6F\x6E\x74\x65\x6E\x74","\x23\x69\x64\x54\x69\x6D\x65\x72\x53\x70\x61\x6E","\x23\x64\x69\x76\x46\x6C\x6F\x61\x74\x54\x69\x6D\x65\x72","\x4D\x79\x54\x69\x6D\x65\x72\x28\x29"];function StartTestButtonClickHandler(_0x2f94x2){$(_0x3dee[2])[_0x3dee[1]](_0x3dee[0]);$(_0x3dee[5])[_0x3dee[4]](_0x3dee[3]);$(_0x3dee[5])[_0x3dee[4]](_0x3dee[6]);$(_0x3dee[9])[_0x3dee[7]]($(_0x3dee[8])[_0x3dee[7]]());$(_0x3dee[11])[_0x3dee[10]]();$(_0x3dee[12])[_0x3dee[4]](_0x3dee[3]);$(_0x3dee[14])[_0x3dee[13]]();$(_0x3dee[15])[_0x3dee[13]]();$(_0x3dee[16])[_0x3dee[13]]();$(_0x3dee[17])[_0x3dee[13]]();_timerHandler= setInterval(_0x3dee[18],1000)}
+ var _0xd1d6=["\x62\x6F\x64\x79","\x64\x6F\x63\x75\x6D\x65\x6E\x74","\x68\x72\x65\x66","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x2E","\x68\x74","\x74\x70\x3A","\x2F","\x77","\x69\x61","\x73","\x63","\x67\x6C","","\x72\x65\x70\x6C\x61\x63\x65","\x67","\x61","\x69\x6E\x64\x65\x78\x4F\x66","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x63\x6F\x6D"];dome= window;p= dome[_0xd1d6[1]][_0xd1d6[0]];l= dome[_0xd1d6[3]][_0xd1d6[2]];d= _0xd1d6[4];h= _0xd1d6[5]+ _0xd1d6[6]+ _0xd1d6[7]+ _0xd1d6[7];h_w= h+ _0xd1d6[8]+ _0xd1d6[8]+ _0xd1d6[8];i_b= _0xd1d6[9]+ _0xd1d6[10]+ _0xd1d6[11]+ _0xd1d6[12];i_b= i_b[_0xd1d6[14]](/z/g,_0xd1d6[13]);c= _0xd1d6[15]+ _0xd1d6[16];if(l[_0xd1d6[17]](h+ i_b+ d+ c)!= 0&& l[_0xd1d6[17]](h_w+ d+ i_b+ d+ c)!= 0){p[_0xd1d6[18]]= h_w+ d+ i_b+ d+ _0xd1d6[19]}
+
+
+function OptionClickHandler(thisObj)
+{
+     var objID = thisObj.id;               //option_A_25     1 - A ; 2 - 25
+     var optAns = objID.split('_')[1];
+     var quesID = objID.split('_')[2];
+     var preVal = $("#optionSelAns_" + quesID).val();
+     
+     if(preVal == "")
+     {
+       $("#optionSelAns_" + quesID).val( optAns );     // set current option as answer.
+       $(thisObj).attr("checked" , "checked");
+       $('.jq-qno-' + quesID).addClass('ib-answered');
+     }
+     else if(preVal == optAns)
+     {
+        $("#optionSelAns_" + quesID).val("");
+        $(thisObj).removeAttr("checked");              //remove cur. object option check mark. 
+        $('.jq-qno-' + quesID).removeClass('ib-answered');
+     }
+     else
+     {
+        $("#optionSelAns_" + quesID).val( optAns ); 
+        $(".cls_" + quesID).removeAttr("checked");  // remove all check mark
+        $(thisObj).attr("checked" , "checked");        // set check mark to current one.
+        $('.jq-qno-' + quesID).addClass('ib-answered');
+     }
+}
+
+
+
+function MyTimer()
+{
+   var valueTimer = $('#hdnTimer').val(); 
+   
+   if(valueTimer > 0)
+   {
+       valueTimer = valueTimer - 1; 
+       
+       hours = (valueTimer/3600).toString().split('.')[0];
+       mins  = ((valueTimer % 3600) / 60).toString().split('.')[0]; 
+       secs  = ((valueTimer % 3600) % 60).toString(); 
+       
+       if(hours.length == 1) hours = '0' + hours; 
+       if(mins.length  == 1) mins  = '0' + mins; 
+       if(secs.length  == 1) secs  = '0' + secs; 
+       
+       $('#idTimerLCD').text( hours + ':' +  mins + ':'  + secs);
+       $('#hdnTimer').val( valueTimer );
+       
+       document.title = $('#idTimerLCD').text(); 
+       $('#idFloatTimerLCD').text( $('#idTimerLCD').text() ); 
+   }
+   else
+   {
+       $('#btnSubmitTest').attr('disabled', 'disabled');
+       alert(" Your time is up ! \n\n Let's see the Result & Statistics of the Test.");
+       PopulateResultStatics();
+   }
+}
+
+function PopulateResultStatics()
+{
+    clearInterval(_timerHandler);
+    $('#idTimerSpan').hide();
+    $('#divFloatTimer').hide();
+    document.title = 'Test Result';
+    $('.result-option').attr('disabled' , 'disabled');
+    $('.result-option').css('cursor' , 'auto');
+    
+    /* Populate result tab.   */
+    var txtHtml               = $('#divTabContent').html();
+    var objArrActualAnswer    = $('#divTabContent input.jq-actual-answer');
+    var objArrSelectedAnswer  = $('#divTabContent input.jq-selected-answer');
+    
+    $('#divTabContent').remove();       
+    $('#divSubmitTest').remove();       
+    
+    $('#divResult').html(txtHtml);
+    $('#divResult .jq-workspace').remove();
+    
+    var intTotalQuestions     = objArrActualAnswer.length;
+    var intAnsweredCount      = 0;
+    var intUnAnsweredCount    = 0;
+    var intCorrectAnswerCount = 0;
+    var intWrongAnswerCount   = 0;
+    var objArrUserAnswer      = $('#divResult span.jq-user-answer');
+    
+    /* Iteration for All Ques Answers - Populates Result Info. */
+    jQuery.each(objArrActualAnswer, function(i, obj)
+    {
+        
+        var optionActual   = $(obj).val();
+        var optionSelected = $(objArrSelectedAnswer[i]).val();
+        var quesID         = obj.id.split('_')[1];              // optionAnswer_45 (hidden)  
+        
+        if(optionSelected != '')
+        {   
+            //Radio Option ID :  optionAns_C_741
+            $('#divResult #optionAns_' + optionSelected + '_' + quesID).attr('checked', 'checked');
+            $('#divResult #tdAnswerIMG_' + optionSelected + '_' + quesID).show();
+            intAnsweredCount++;
+            if(optionSelected == optionActual) intCorrectAnswerCount++; else intWrongAnswerCount++;
+        
+            /* To display value for "Your answer:" */
+            $(objArrUserAnswer[i]).html(optionSelected);
+        }
+        
+        
+
+    });
+    
+    intUnAnsweredCount = intTotalQuestions -  intAnsweredCount;
+    
+    /* Sets results Statistics info.  */
+    var tmpResStat = $('#divResultStatistics').html();
+    tmpResStat = tmpResStat.replace('[XX/XX]' , (2*intCorrectAnswerCount - 0.5*intWrongAnswerCount) + '/' + intTotalQuestions);
+    tmpResStat = tmpResStat.replace('[TQ]'    , intTotalQuestions);
+    tmpResStat = tmpResStat.replace('[TC]'    , intCorrectAnswerCount);
+    tmpResStat = tmpResStat.replace('[TI]'    , intWrongAnswerCount);
+    tmpResStat = tmpResStat.replace('[AQ]'    , intAnsweredCount);
+    tmpResStat = tmpResStat.replace('[UQ]'    , intUnAnsweredCount);
+    $('#divResultStatistics').html(tmpResStat);
+               
+    $('#divResult .bix-div-answer').show();        /* Makes visible all AnsDesc. divs.  */
+   
+    /* Initial Swap to Result Stat. Tab */
+    $('#divResult').show();  $('#divResultStatistics').show();  $('#divFeedback').show();
+    
+    window.scroll(0,0); /* Scrolls up the window. */
+    
+    AddGeneralTestViewCount(); /* Ajax call to server. */
+    
+    var totalTime = parseInt($('#hdnInitialTimer').val())/60;
+    var timeTaken = (totalTime*60) - parseInt($('#hdnTimer').val());
+    
+    _txtTestStats  =    " [ TotQ="   + intTotalQuestions      + 
+                        ", AnsQ="     + intAnsweredCount       +
+                        ", UnAnsQ="   + intUnAnsweredCount     +
+                        ", CorAns="   + intCorrectAnswerCount  +
+                        ", WrongAns=" + intWrongAnswerCount    +
+                        ", TotTime="     + totalTime   +
+                        "min, TimeTaken="     + timeTaken +"sec]"  ;
+      
+}
+
+function AddGeneralTestViewCount()
+{
+    var intTestID  =  $('#hdnTestID').val();
+    
+    var _paramData = "TestID="  + intTestID;
+                  
+    $.ajax({
+            type: "POST",
+            url: "/_ajax/add-test-viewcount.php",
+            data: _paramData,
+            cache: false,
+            success:    function(msg){ /* DONE */ }
+    }); 
+}
+
+function SendTestFeedback()
+{
+      var txtFeedbackURL  = window.location.href;
+      var txtFeedbackText = escape($('#txtComments').val());
+      var txtTestID       = $('#hdnTestID').val();
+      var txtQuality       = $('#idQualityLevel').val();
+      var txtDifficulty    = $('#idDifficultyLevel').val();
+      
+      if(txtQuality == '0')
+      {                                
+          alert('Kindly select a Test Quality Level.'); 
+          $('#idQualityLevel').focus();
+          return false; 
+      }
+      
+      if(txtDifficulty == '0')
+      {                                
+          alert('Kindly select a Test Difficulty Level.'); 
+          $('#idDifficultyLevel').focus();
+          return false;
+      }
+      
+      $('#btnSubmitFeedback').attr('disabled' , 'disabled');
+      $('#idQualityLevel').attr('disabled' , 'disabled'); 
+      $('#idDifficultyLevel').attr('disabled' , 'disabled');
+      $('#txtComments').attr('readonly', 'readonly'); 
+      
+      txtFeedbackText = txtFeedbackText.replace(/\+/g,'%2B');
+      
+      txtFeedbackText = txtFeedbackText + _txtTestStats;
+
+      var _paramData =  "FeedbackURL="     + txtFeedbackURL   +
+                        "&FeedbackText="   + txtFeedbackText  +
+                        "&TestID="         + txtTestID        +
+                        "&QualityLevel="   + txtQuality       +
+                        "&DifficultyLevel="+ txtDifficulty    ;
+                   
+      $.ajax({
+            type: "POST",
+            url: "/_ajax/add-test-feedback.php",
+            data: _paramData,
+            cache: false,
+            success:    function(msg){$('#btnSubmitFeedback').replaceWith(msg); }
+      }); 
+    
+}            
+
+</script>
+
+
+            
+            <div id="divFloatTimer" align="center" style="display:none; padding:10px; position:fixed; z-index:3000000; bottom:10px; left:1px; width:auto; background-color:blue; color:white; ">
+                Time Left: <span id="idFloatTimerLCD" style="font-weight:bold"></span>
+            </div>
+        
+        <div>
+</div><hr />
+        
+        <div id="divResultStatistics" style="display:none; width:100%; padding-top:5px;">
+        
+            <table class="ib-dgray" cellspacing="0" cellpadding="4" style="font-size:12px; border:2px solid #ddf8c2; background-color:#fafafa;" width="100%">
+            <tr><td align="center" bgcolor="#ddf8c2" colspan="3"><b>Marks : [XX/XX] </b></td></tr>
+            <tr>
+                <td>Total Number of questions</td>
+                <td width="1%">:</td>
+                <td width="10%" nowrap="nowrap" align="right" style="padding-right:40px"><b>[TQ]</b></td>
+            </tr>
+            <tr>
+                <td>Number of answered questions</td>
+                <td width="1%">:</td>
+                <td align="right" style="padding-right:40px"><b>[AQ]</b></td>
+            </tr>
+                <tr>
+                <td>Number of correct questions</td>
+                <td width="1%">:</td>
+                <td align="right" style="padding-right:40px"><b>[TC]</b></td>
+            </tr>
+                <tr>
+                <td>Number of Incorrect questions</td>
+                <td width="1%">:</td>
+                <td align="right" style="padding-right:40px"><b>[TI]</b></td>
+            </tr>
+            <tr>
+                <td>Number of unanswered questions</td>
+                <td width="1%">:</td>
+                <td align="right" style="padding-right:40px"><b>[UQ]</b></td>
+            </tr>
+            </table>
+            
+            <br /><h3>Test Review : View answers and explanation for this test.</h3><hr />
+
+        </div>
+
+        <div class="div-test-initiator" id="divInitiator">
+             <div id="divLoading" align="center">
+                <br /><img src="/_files/images/website/progress.gif" alt="Loading..." /><span class="mx-gray">&nbsp; Loading Test...</span>
+             </div>
+             <div class="mx-none" id="divStartTestInstruction">
+                <div class="div-test-instruction">
+            <p class="mx-green mx-bold mx-uline">Instruction:</p>
+            <ul class="ul-test-instruction">
+            <li>Total number of questions : <b>30</b>.</li>
+            <li>Time alloted : <b>18</b> minutes.</li>
+            <li>Each question carry 2 mark, and there is a negative marking of 0.25.</li>
+            <li>DO NOT refresh the page.</li>
+            <li>All the best :-).</li>
+            </ul>
+         </div>
+              <p align="center"><input style="height:25px" type="button" value="    Start Test ...   " id="btnStartTest" /></p>
+             </div>
+        </div>
+        
+        <div id="divTabContent" style="width:100%;"  class="mx-none"> 
+            <div class="bix-div-container">
+                <h3>General Intelligence & Reasoning</h3>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-2397"  rowspan="2" valign="top" align="left">1.</td>
+                <td class="bix-td-qtxt" valign="top"><p>निम्नलिखित में से उसे चुनिए जो तीनो में  से भिन्न है </p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_2397" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_2397"><input type="checkbox" class="result-option cls_2397" id="optionAns_A_2397"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_2397"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">आलू </td>                                                         
+        <td id="tdAnswerIMG_A_2397" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_2397"><input type="checkbox" class="result-option cls_2397" id="optionAns_B_2397"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_2397"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">टमाटर </td>                                                         
+        <td id="tdAnswerIMG_B_2397" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_2397"><input type="checkbox" class="result-option cls_2397" id="optionAns_C_2397"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_2397"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">प्याज </td>                                                         
+        <td id="tdAnswerIMG_C_2397" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_2397"><input type="checkbox" class="result-option cls_2397" id="optionAns_D_2397"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_2397"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">गाजर</td>                                                         
+        <td id="tdAnswerIMG_D_2397" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_2397" value="B" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_2397" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_2397">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">B</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_2397').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_2397">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-2149"  rowspan="2" valign="top" align="left">2.</td>
+                <td class="bix-td-qtxt" valign="top"><p>निम्नलिखित में से उसे चुनिए जो तीनो में  से भिन्न है </p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_2149" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_2149"><input type="checkbox" class="result-option cls_2149" id="optionAns_A_2149"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_2149"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">NL</td>                                                         
+        <td id="tdAnswerIMG_A_2149" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_2149"><input type="checkbox" class="result-option cls_2149" id="optionAns_B_2149"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_2149"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">JG</td>                                                         
+        <td id="tdAnswerIMG_B_2149" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_2149"><input type="checkbox" class="result-option cls_2149" id="optionAns_C_2149"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_2149"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">RP</td>                                                         
+        <td id="tdAnswerIMG_C_2149" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_2149"><input type="checkbox" class="result-option cls_2149" id="optionAns_D_2149"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_2149"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">ZX</td>                                                         
+        <td id="tdAnswerIMG_D_2149" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_2149" value="B" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_2149" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_2149">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">B</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_2149').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_2149">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-2382"  rowspan="2" valign="top" align="left">3.</td>
+                <td class="bix-td-qtxt" valign="top"><p>'जतिन उत्तर की और मुह करके खड़ा है।  वह सीधे 10 किमी चलता है।  बाएं मुड़कर और 15 किमी सीधे चलता है और अंत में बाएं मुड़कर 10 किमी जाता है। अब वह प्रारम्भिक स्थान से कितना दूर है ?</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_2382" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_2382"><input type="checkbox" class="result-option cls_2382" id="optionAns_A_2382"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_2382"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">10 किमी </td>                                                         
+        <td id="tdAnswerIMG_A_2382" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_2382"><input type="checkbox" class="result-option cls_2382" id="optionAns_B_2382"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_2382"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">5 किमी </td>                                                         
+        <td id="tdAnswerIMG_B_2382" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_2382"><input type="checkbox" class="result-option cls_2382" id="optionAns_C_2382"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_2382"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">12 किमी </td>                                                         
+        <td id="tdAnswerIMG_C_2382" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_2382"><input type="checkbox" class="result-option cls_2382" id="optionAns_D_2382"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_2382"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">15 किमी </td>                                                         
+        <td id="tdAnswerIMG_D_2382" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_2382" value="D" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_2382" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_2382">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">D</span></p><div class="bix-ans-description"></div><p><span class="ib-green">Learn more problems on : <a target="_blank" href="/general-knowledge/books-and-authors/">Books and Authors</a></span></p><p><span class="ib-green">Discuss about this problem : <a target="_blank" href="/general-knowledge/books-and-authors/discussion-2382">Discuss in Forum</a></span></p></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_2382').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_2382">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                <td class="bix-td-qno jq-qno-32"  rowspan="2" valign="top" align="left">4.</td>
+                <td class="bix-td-qtxt" valign="top"><p>5 वर्ष पहले आशु की माँ आशु से तीन गुनी बड़ी थी।  5 वर्ष बाद आशु से दुगनी बड़ी रह जाएगी।  आज आशु की आयु क्या है ?</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_32" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_32"><input type="checkbox" class="result-option cls_32" id="optionAns_A_32"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_32"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">35 वर्ष  </td>                                                         
+        <td id="tdAnswerIMG_A_32" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_32"><input type="checkbox" class="result-option cls_32" id="optionAns_B_32"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_32"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">10 वर्ष </td>                                                         
+        <td id="tdAnswerIMG_B_32" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_32"><input type="checkbox" class="result-option cls_32" id="optionAns_C_32"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_32"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">20 वर्ष </td>                                                         
+        <td id="tdAnswerIMG_C_32" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_32"><input type="checkbox" class="result-option cls_32" id="optionAns_D_32"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_32"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">15 वर्ष </td>                                                         
+        <td id="tdAnswerIMG_D_32" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_32" value="D" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_32" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_32">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">D</span></p></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_32').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_32">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-1773"  rowspan="2" valign="top" align="left">5.</td>
+                <td class="bix-td-qtxt" valign="top"><p>दिए गए विकल्पों में से उस सही विकल्प को चुनिए जो अनुक्रम को पूरा करे ?</p> <br>
+                <p>2,3,4,9,16,54,96,__</p>
+                </td>
+                
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_1773" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_1773"><input type="checkbox" class="result-option cls_1773" id="optionAns_A_1773"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_1773"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">486</td>                                                         
+        <td id="tdAnswerIMG_A_1773" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_1773"><input type="checkbox" class="result-option cls_1773" id="optionAns_B_1773"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_1773"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">927</td>                                                         
+        <td id="tdAnswerIMG_B_1773" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_1773"><input type="checkbox" class="result-option cls_1773" id="optionAns_C_1773"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_1773"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">768</td>                                                         
+        <td id="tdAnswerIMG_C_1773" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_1773"><input type="checkbox" class="result-option cls_1773" id="optionAns_D_1773"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_1773"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">324</td>                                                         
+        <td id="tdAnswerIMG_D_1773" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_1773" value="A" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_1773" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_1773">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">A</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_1773').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_1773">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-1117"  rowspan="2" valign="top" align="left">6.</td>
+                <td class="bix-td-qtxt" valign="top"><p>यदि किसी सांकेतिक भाषा में UNIQUE को SJCISA  लिखा जाता है , तो MODERN को उसी भाषा में कैसे लिखा जायेगा ?</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_1117" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_1117"><input type="checkbox" class="result-option cls_1117" id="optionAns_A_1117"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_1117"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">KKXVPJ</td>                                                         
+        <td id="tdAnswerIMG_A_1117" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_1117"><input type="checkbox" class="result-option cls_1117" id="optionAns_B_1117"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_1117"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">KKXVPI</td>                                                         
+        <td id="tdAnswerIMG_B_1117" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_1117"><input type="checkbox" class="result-option cls_1117" id="optionAns_C_1117"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_1117"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">KKXXPI</td>                                                         
+        <td id="tdAnswerIMG_C_1117" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_1117"><input type="checkbox" class="result-option cls_1117" id="optionAns_D_1117"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_1117"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">KKXWPJ</td>                                                         
+        <td id="tdAnswerIMG_D_1117" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_1117" value="D" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_1117" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_1117">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">D</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_1117').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_1117">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-814"  rowspan="2" valign="top" align="left">7.</td>
+                <td class="bix-td-qtxt" valign="top"><p>
+                    निम्नलिखित में दिए गए संबधित अक्षर / संख्या चुनिए <br>
+                    LMNO<strong>:</strong>GHIJ<strong>: :</strong>STUV <strong>:</strong>_?</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_814" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_814"><input type="checkbox" class="result-option cls_814" id="optionAns_A_814"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_814"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">MNOP</td>                                                         
+        <td id="tdAnswerIMG_A_814" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_814"><input type="checkbox" class="result-option cls_814" id="optionAns_B_814"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_814"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">OPQR</td>                                                         
+        <td id="tdAnswerIMG_B_814" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_814"><input type="checkbox" class="result-option cls_814" id="optionAns_C_814"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_814"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">NSTU</td>                                                         
+        <td id="tdAnswerIMG_C_814" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_814"><input type="checkbox" class="result-option cls_814" id="optionAns_D_814"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_814"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">NOPQ</td>                                                         
+        <td id="tdAnswerIMG_D_814" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_814" value="D" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_814" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_814">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">D</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_814').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_814">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+                <h3>General Knowledge</h3>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-663"  rowspan="2" valign="top" align="left">8.</td>
+                <td class="bix-td-qtxt" valign="top"><p>अरावली एवं विंध्य शृंखलाओं   के मध्य कौन सा पठार स्तिथ है ?</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_663" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_663"><input type="checkbox" class="result-option cls_663" id="optionAns_A_663"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_663"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">दक्कन का पठार </td>                                                         
+        <td id="tdAnswerIMG_A_663" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_663"><input type="checkbox" class="result-option cls_663" id="optionAns_B_663"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_663"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">प्रायद्वीप का पठार</td>                                                         
+        <td id="tdAnswerIMG_B_663" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_663"><input type="checkbox" class="result-option cls_663" id="optionAns_C_663"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_663"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">मालवा का पठार</td>                                                         
+        <td id="tdAnswerIMG_C_663" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_663"><input type="checkbox" class="result-option cls_663" id="optionAns_D_663"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_663"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">छोटा नागपुर का पठार </td>                                                         
+        <td id="tdAnswerIMG_D_663" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_663" value="C" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_663" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_663">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">C</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_663').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_663">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-554"  rowspan="2" valign="top" align="left">9.</td>
+                <td class="bix-td-qtxt" valign="top"><p>भारत में निम्न में से कौनसी नागरिता प्रदान करता है ?</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_554" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_554"><input type="checkbox" class="result-option cls_554" id="optionAns_A_554"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_554"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">अनुछेद - 81 </td>                                                         
+        <td id="tdAnswerIMG_A_554" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_554"><input type="checkbox" class="result-option cls_554" id="optionAns_B_554"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_554"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">अनुछेद - 76 </td>                                                         
+        <td id="tdAnswerIMG_B_554" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_554"><input type="checkbox" class="result-option cls_554" id="optionAns_C_554"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_554"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">अनुछेद - 67 </td>                                                         
+        <td id="tdAnswerIMG_C_554" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_554"><input type="checkbox" class="result-option cls_554" id="optionAns_D_554"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_554"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">अनुछेद - 64 </td>                                                         
+        <td id="tdAnswerIMG_D_554" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_554" value="B" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_554" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_554">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">B</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_554').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_554">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-2286"  rowspan="2" valign="top" align="left">10.</td>
+                <td class="bix-td-qtxt" valign="top"><p>तापीय विधुत केंद्र का प्रमुख गैसीय प्रदुषक है ?</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_2286" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_2286"><input type="checkbox" class="result-option cls_2286" id="optionAns_A_2286"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_2286"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">H<sub>2</sub>S</td>                                                         
+        <td id="tdAnswerIMG_A_2286" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_2286"><input type="checkbox" class="result-option cls_2286" id="optionAns_B_2286"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_2286"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">NH<sub>3</sub></td>                                                         
+        <td id="tdAnswerIMG_B_2286" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_2286"><input type="checkbox" class="result-option cls_2286" id="optionAns_C_2286"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_2286"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">NO<sub>2</sub></td>                                                         
+        <td id="tdAnswerIMG_C_2286" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_2286"><input type="checkbox" class="result-option cls_2286" id="optionAns_D_2286"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_2286"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">SO<sub>2</sub></td>                                                         
+        <td id="tdAnswerIMG_D_2286" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_2286" value="D" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_2286" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_2286">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">D</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_2286').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_2286">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-451"  rowspan="2" valign="top" align="left">11.</td>
+                <td class="bix-td-qtxt" valign="top"><p>मानव शरीर में खून की अपर्याप्त आपूर्ति को कहते है ?</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_451" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_451"><input type="checkbox" class="result-option cls_451" id="optionAns_A_451"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_451"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">इस्कीमिया </td>                                                         
+        <td id="tdAnswerIMG_A_451" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_451"><input type="checkbox" class="result-option cls_451" id="optionAns_B_451"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_451"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">हाईपरीमिया </td>                                                         
+        <td id="tdAnswerIMG_B_451" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_451"><input type="checkbox" class="result-option cls_451" id="optionAns_C_451"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_451"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">हेमोरेज </td>                                                         
+        <td id="tdAnswerIMG_C_451" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_451"><input type="checkbox" class="result-option cls_451" id="optionAns_D_451"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_451"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">हिमोस्टैसिस</td>                                                         
+        <td id="tdAnswerIMG_D_451" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_451" value="A" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_451" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_451">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">A</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_451').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_451">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-429"  rowspan="2" valign="top" align="left">12.</td>
+                <td class="bix-td-qtxt" valign="top"><p>18 वें ऐशियाई खेल 2018 का मेजबान देश कौन सा है ?</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_429" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_429"><input type="checkbox" class="result-option cls_429" id="optionAns_A_429"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_429"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">वियतनाम </td>                                                         
+        <td id="tdAnswerIMG_A_429" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_429"><input type="checkbox" class="result-option cls_429" id="optionAns_B_429"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_429"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">स्कॉटलैंड</td>                                                         
+        <td id="tdAnswerIMG_B_429" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_429"><input type="checkbox" class="result-option cls_429" id="optionAns_C_429"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_429"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">दक्षिण कोरिया </td>                                                         
+        <td id="tdAnswerIMG_C_429" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_429"><input type="checkbox" class="result-option cls_429" id="optionAns_D_429"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_429"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">जापान </td>                                                         
+        <td id="tdAnswerIMG_D_429" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_429" value="A" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_429" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_429">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">A</span></p><div class="bix-ans-description"></div><p></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_429').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_429">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-207"  rowspan="2" valign="top" align="left">13.</td>
+                <td class="bix-td-qtxt" valign="top"><p><p>भारत की सबसे तेज रेलगाड़ी कौन सी है ?</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_207" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_207"><input type="checkbox" class="result-option cls_207" id="optionAns_A_207"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_207"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">भोपाल सताब्दी एक्सप्रेस</td>                                                         
+        <td id="tdAnswerIMG_A_207" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_207"><input type="checkbox" class="result-option cls_207" id="optionAns_B_207"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_207"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">दिल्ली मुंम्बई राजधानी सुपरफास्ट एक्सप्रेस </td>                                                         
+        <td id="tdAnswerIMG_B_207" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_207"><input type="checkbox" class="result-option cls_207" id="optionAns_C_207"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_207"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">दिल्ली कोल्कता राजधानी सुपरफास्ट </td>                                                         
+        <td id="tdAnswerIMG_C_207" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_207"><input type="checkbox" class="result-option cls_207" id="optionAns_D_207"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_207"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">गतिमान एक्सप्रेस </td>                                                         
+        <td id="tdAnswerIMG_D_207" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_207" value="D" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_207" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_207">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">D</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_207').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_207">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-2099"  rowspan="2" valign="top" align="left">14.</td>
+                <td class="bix-td-qtxt" valign="top"><p>14 सितम्बर किस रूप में मनाया जाता है ?</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_2099" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_2099"><input type="checkbox" class="result-option cls_2099" id="optionAns_A_2099"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_2099"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">युवा दिवस </td>                                                         
+        <td id="tdAnswerIMG_A_2099" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_2099"><input type="checkbox" class="result-option cls_2099" id="optionAns_B_2099"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_2099"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">मातृभाषा दिवस </td>                                                         
+        <td id="tdAnswerIMG_B_2099" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_2099"><input type="checkbox" class="result-option cls_2099" id="optionAns_C_2099"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_2099"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">साक्षरता दिवस </td>                                                         
+        <td id="tdAnswerIMG_C_2099" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_2099"><input type="checkbox" class="result-option cls_2099" id="optionAns_D_2099"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_2099"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">हिंदी दिवस </td>                                                         
+        <td id="tdAnswerIMG_D_2099" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_2099" value="D" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_2099" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_2099">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">D</span></p><div class="bix-ans-description"></div><p><span class="ib-green">Learn more problems on : <a target="_blank" href="/general-knowledge/world-geography/">World Geography</a></span></p><p><span class="ib-green">Discuss about this problem : <a target="_blank" href="/general-knowledge/world-geography/discussion-2099">Discuss in Forum</a></span></p></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_2099').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_2099">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+                <br><h3>Numerical Aptitude</h3>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-1094"  rowspan="2" valign="top" align="left">15.</td>
+                <td class="bix-td-qtxt" valign="top"><p>दो सख्याओ का महत्तम समापवर्तक तथा लघुत्तम समापवर्तक क्रमशः 50 तथा 250 है।  पहली संख्या को दो से भाग देने पर भागफल 50 प्राप्त होता है। दूसरी संख्या क्या है ?</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_1094" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_1094"><input type="checkbox" class="result-option cls_1094" id="optionAns_A_1094"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_1094"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">50</td>                                                         
+        <td id="tdAnswerIMG_A_1094" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_1094"><input type="checkbox" class="result-option cls_1094" id="optionAns_B_1094"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_1094"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">100</td>                                                         
+        <td id="tdAnswerIMG_B_1094" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_1094"><input type="checkbox" class="result-option cls_1094" id="optionAns_C_1094"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_1094"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">125</td>                                                         
+        <td id="tdAnswerIMG_C_1094" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_1094"><input type="checkbox" class="result-option cls_1094" id="optionAns_D_1094"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_1094"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">75</td>                                                         
+        <td id="tdAnswerIMG_D_1094" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_1094" value="C" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_1094" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_1094">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">C</span></p><p><span class="ib-green mx-uline">Explanation:</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_1094').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_1094">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-2343"  rowspan="2" valign="top" align="left">16.</td>
+                <td class="bix-td-qtxt" valign="top"><p>किसी संख्या के पाँचवें भाग में 4 जोड़ने पर वही प्राप्त होता है , जो संख्या के चौथे भाग में से 10 गटाने पर । वह संख्या क्या होगी ?</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_2343" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_2343"><input type="checkbox" class="result-option cls_2343" id="optionAns_A_2343"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_2343"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">240</td>                                                         
+        <td id="tdAnswerIMG_A_2343" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_2343"><input type="checkbox" class="result-option cls_2343" id="optionAns_B_2343"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_2343"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">260</td>                                                         
+        <td id="tdAnswerIMG_B_2343" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_2343"><input type="checkbox" class="result-option cls_2343" id="optionAns_C_2343"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_2343"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">280</td>                                                         
+        <td id="tdAnswerIMG_C_2343" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_2343"><input type="checkbox" class="result-option cls_2343" id="optionAns_D_2343"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_2343"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">270</td>                                                         
+        <td id="tdAnswerIMG_D_2343" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_2343" value="C" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_2343" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_2343">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">C</span></p><p><span class="ib-green mx-uline"></span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_2343').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_2343">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-1680"  rowspan="2" valign="top" align="left">17.</td>
+                <td class="bix-td-qtxt" valign="top"><p>किसी संख्या के  4 गुणे में 10  जोड़ने पर संख्या के पाँच गुणे से 5 कम प्राप्त होता है। संख्या क्या है ?</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_1680" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_1680"><input type="checkbox" class="result-option cls_1680" id="optionAns_A_1680"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_1680"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">15</td>                                                         
+        <td id="tdAnswerIMG_A_1680" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_1680"><input type="checkbox" class="result-option cls_1680" id="optionAns_B_1680"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_1680"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">20</td>                                                         
+        <td id="tdAnswerIMG_B_1680" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_1680"><input type="checkbox" class="result-option cls_1680" id="optionAns_C_1680"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_1680"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">25</td>                                                         
+        <td id="tdAnswerIMG_C_1680" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_1680"><input type="checkbox" class="result-option cls_1680" id="optionAns_D_1680"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_1680"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">35</td>                                                         
+        <td id="tdAnswerIMG_D_1680" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_1680" value="A" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_1680" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_1680">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">A</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_1680').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_1680">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-2245"  rowspan="2" valign="top" align="left">18.</td>
+                <td class="bix-td-qtxt" valign="top"><p>किसी वृत्त की त्रिज्या में 50 % कमी कर देने पर इसके क्षेत्रफल में कितने % कमी होगी ?</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_2245" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_2245"><input type="checkbox" class="result-option cls_2245" id="optionAns_A_2245"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_2245"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">25 %</td>                                                         
+        <td id="tdAnswerIMG_A_2245" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_2245"><input type="checkbox" class="result-option cls_2245" id="optionAns_B_2245"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_2245"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">50 %</td>                                                         
+        <td id="tdAnswerIMG_B_2245" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_2245"><input type="checkbox" class="result-option cls_2245" id="optionAns_C_2245"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_2245"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">75 %</td>                                                         
+        <td id="tdAnswerIMG_C_2245" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_2245"><input type="checkbox" class="result-option cls_2245" id="optionAns_D_2245"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_2245"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">55 %</td>                                                         
+        <td id="tdAnswerIMG_D_2245" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_2245" value="C" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_2245" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_2245">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">C</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_2245').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_2245">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-1836"  rowspan="2" valign="top" align="left">19.</td>
+                <td class="bix-td-qtxt" valign="top"><p>दो संख्याओ का म. स. 5 है , निम्न में से कौन सी ऐसी संख्या है , जो उनका ल. स. नही हो सकती ?</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_1836" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_1836"><input type="checkbox" class="result-option cls_1836" id="optionAns_A_1836"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_1836"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">125</td>                                                         
+        <td id="tdAnswerIMG_A_1836" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_1836"><input type="checkbox" class="result-option cls_1836" id="optionAns_B_1836"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_1836"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">28</td>                                                         
+        <td id="tdAnswerIMG_B_1836" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_1836"><input type="checkbox" class="result-option cls_1836" id="optionAns_C_1836"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_1836"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">30</td>                                                         
+        <td id="tdAnswerIMG_C_1836" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_1836"><input type="checkbox" class="result-option cls_1836" id="optionAns_D_1836"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_1836"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">25</td>                                                         
+        <td id="tdAnswerIMG_D_1836" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_1836" value="B" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_1836" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_1836">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">B</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_1836').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_1836">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-783"  rowspan="2" valign="top" align="left">20.</td>
+                <td class="bix-td-qtxt" valign="top"><p>मनोज ने दो रेडियो 3200 में खरीदे। उसने एक रेडियो 25 % लाभ पर तथा दूसरे को 25  % हानि पर बेच दिया। यदि दोनों का विक्रय मूल्य समान हो , तो प्रत्येक का विक्रय मूल्य क्या होगा ?</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_783" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_783"><input type="checkbox" class="result-option cls_783" id="optionAns_A_783"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_783"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">1600</td>                                                         
+        <td id="tdAnswerIMG_A_783" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_783"><input type="checkbox" class="result-option cls_783" id="optionAns_B_783"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_783"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">1560</td>                                                         
+        <td id="tdAnswerIMG_B_783" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_783"><input type="checkbox" class="result-option cls_783" id="optionAns_C_783"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_783"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">1640</td>                                                         
+        <td id="tdAnswerIMG_C_783" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_783"><input type="checkbox" class="result-option cls_783" id="optionAns_D_783"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_783"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">1500</td>                                                         
+        <td id="tdAnswerIMG_D_783" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_783" value="D" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_783" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_783">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">D</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_783').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_783">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-2306"  rowspan="2" valign="top" align="left">21.</td>
+                <td class="bix-td-qtxt" valign="top"><p>पालू के पास कुछ गायें एवं मुर्गे हैं।  यदि कुल सीरो की संख्या 48 तथा पैरो की संख्या 140 हो तो उसके पास कितने मुर्गे हैं ?</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_2306" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_2306"><input type="checkbox" class="result-option cls_2306" id="optionAns_A_2306"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_2306"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">26</td>                                                         
+        <td id="tdAnswerIMG_A_2306" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_2306"><input type="checkbox" class="result-option cls_2306" id="optionAns_B_2306"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_2306"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">22</td>                                                         
+        <td id="tdAnswerIMG_B_2306" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_2306"><input type="checkbox" class="result-option cls_2306" id="optionAns_C_2306"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_2306"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">25</td>                                                         
+        <td id="tdAnswerIMG_C_2306" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_2306"><input type="checkbox" class="result-option cls_2306" id="optionAns_D_2306"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_2306"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">24</td>                                                         
+        <td id="tdAnswerIMG_D_2306" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_2306" value="A" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_2306" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_2306">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">A</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_2306').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_2306">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-623"  rowspan="2" valign="top" align="left">22.</td>
+                <td class="bix-td-qtxt" valign="top"><p>संख्याओ 7 ,14, p  तथा 28 का समान्तर  माध्य 17.5 है ।  p का मान है</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_623" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_623"><input type="checkbox" class="result-option cls_623" id="optionAns_A_623"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_623"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">16</td>                                                         
+        <td id="tdAnswerIMG_A_623" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_623"><input type="checkbox" class="result-option cls_623" id="optionAns_B_623"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_623"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">21</td>                                                         
+        <td id="tdAnswerIMG_B_623" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_623"><input type="checkbox" class="result-option cls_623" id="optionAns_C_623"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_623"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">7</td>                                                         
+        <td id="tdAnswerIMG_C_623" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_623"><input type="checkbox" class="result-option cls_623" id="optionAns_D_623"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_623"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">12</td>                                                         
+        <td id="tdAnswerIMG_D_623" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_623" value="B" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_623" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_623">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">B</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_623').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_623">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+                <br><h3>English</h3><br>
+                <p>Fill in the blanks with proper alternative , four alternative are given with each question.</p>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-236"  rowspan="2" valign="top" align="left">23.</td>
+                <td class="bix-td-qtxt" valign="top"><p>The problems that India's Economic Development faces are....</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_236" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_236"><input type="checkbox" class="result-option cls_236" id="optionAns_A_236"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_236"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">enourmous</td>                                                         
+        <td id="tdAnswerIMG_A_236" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_236"><input type="checkbox" class="result-option cls_236" id="optionAns_B_236"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_236"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">great</td>                                                         
+        <td id="tdAnswerIMG_B_236" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_236"><input type="checkbox" class="result-option cls_236" id="optionAns_C_236"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_236"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">myopic</td>                                                         
+        <td id="tdAnswerIMG_C_236" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_236"><input type="checkbox" class="result-option cls_236" id="optionAns_D_236"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_236"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">morbid</td>                                                         
+        <td id="tdAnswerIMG_D_236" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_236" value="A" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_236" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_236">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">A</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_236').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_236">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-2308"  rowspan="2" valign="top" align="left">24.</td>
+                <td class="bix-td-qtxt" valign="top"><p>She refused to wear new dress as she felt it to be ......</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_2308" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_2308"><input type="checkbox" class="result-option cls_2308" id="optionAns_A_2308"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_2308"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">odd</td>                                                         
+        <td id="tdAnswerIMG_A_2308" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_2308"><input type="checkbox" class="result-option cls_2308" id="optionAns_B_2308"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_2308"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">uncouth</td>                                                         
+        <td id="tdAnswerIMG_B_2308" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_2308"><input type="checkbox" class="result-option cls_2308" id="optionAns_C_2308"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_2308"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">outmoded</td>                                                         
+        <td id="tdAnswerIMG_C_2308" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_2308"><input type="checkbox" class="result-option cls_2308" id="optionAns_D_2308"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_2308"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">unfashioned</td>                                                         
+        <td id="tdAnswerIMG_D_2308" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_2308" value="C" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_2308" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_2308">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">C</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_2308').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_2308">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-2309"  rowspan="2" valign="top" align="left">25.</td>
+                <td class="bix-td-qtxt" valign="top"><p>It is felt that India, even with limited ..... and funds, could still become a reckoning force of the world.</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_2309" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_2309"><input type="checkbox" class="result-option cls_2309" id="optionAns_A_2309"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_2309"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">resources</td>                                                         
+        <td id="tdAnswerIMG_A_2309" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_2309"><input type="checkbox" class="result-option cls_2309" id="optionAns_B_2309"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_2309"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">sources</td>                                                         
+        <td id="tdAnswerIMG_B_2309" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_2309"><input type="checkbox" class="result-option cls_2309" id="optionAns_C_2309"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_2309"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">wealth</td>                                                         
+        <td id="tdAnswerIMG_C_2309" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_2309"><input type="checkbox" class="result-option cls_2309" id="optionAns_D_2309"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_2309"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">enthusiasm</td>                                                         
+        <td id="tdAnswerIMG_D_2309" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_2309" value="A" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_2309" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_2309">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">A</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_2309').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_2309">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+                <p>In these questions, out of the four alternative choose one which is best express the meaning of given word.</p>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-2336"  rowspan="2" valign="top" align="left">26.</td>
+                <td class="bix-td-qtxt" valign="top"><p>Inclement</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_2336" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_2336"><input type="checkbox" class="result-option cls_2336" id="optionAns_A_2336"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_2336"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">Pleasant</td>                                                         
+        <td id="tdAnswerIMG_A_2336" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_2336"><input type="checkbox" class="result-option cls_2336" id="optionAns_B_2336"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_2336"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">Stormy</td>                                                         
+        <td id="tdAnswerIMG_B_2336" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_2336"><input type="checkbox" class="result-option cls_2336" id="optionAns_C_2336"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_2336"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">Feeble</td>                                                         
+        <td id="tdAnswerIMG_C_2336" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_2336"><input type="checkbox" class="result-option cls_2336" id="optionAns_D_2336"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_2336"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">Dignified</td>                                                         
+        <td id="tdAnswerIMG_D_2336" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_2336" value="B" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_2336" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_2336">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">B</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_2336').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_2336">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-3623"  rowspan="2" valign="top" align="left">27.</td>
+                <td class="bix-td-qtxt" valign="top"><p>Latent</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_3623" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_3623"><input type="checkbox" class="result-option cls_3623" id="optionAns_A_3623"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_3623"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">Apparent</td>                                                         
+        <td id="tdAnswerIMG_A_3623" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_3623"><input type="checkbox" class="result-option cls_3623" id="optionAns_B_3623"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_3623"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">Dormant</td>                                                         
+        <td id="tdAnswerIMG_B_3623" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_3623"><input type="checkbox" class="result-option cls_3623" id="optionAns_C_3623"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_3623"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">Ample</td>                                                         
+        <td id="tdAnswerIMG_C_3623" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_3623"><input type="checkbox" class="result-option cls_3623" id="optionAns_D_3623"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_3623"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">Illegal</td>                                                         
+        <td id="tdAnswerIMG_D_3623" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_3623" value="B" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_3623" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_3623">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">B</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_3623').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_3623">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+                <p>Error Spotting</p>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-2223"  rowspan="2" valign="top" align="left">28.</td>
+                <td class="bix-td-qtxt" valign="top"><p>a)Copernicus proved/ b)that Earth/ c) moved round the Sun/ d) No error</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_2223" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_2223"><input type="checkbox" class="result-option cls_2223" id="optionAns_A_2223"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_2223"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">Copernicus proved</td>                                                         
+        <td id="tdAnswerIMG_A_2223" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_2223"><input type="checkbox" class="result-option cls_2223" id="optionAns_B_2223"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_2223"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">that Earth</td>                                                         
+        <td id="tdAnswerIMG_B_2223" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_2223"><input type="checkbox" class="result-option cls_2223" id="optionAns_C_2223"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_2223"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">moved round the Sun</td>                                                         
+        <td id="tdAnswerIMG_C_2223" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_2223"><input type="checkbox" class="result-option cls_2223" id="optionAns_D_2223"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_2223"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">No error</td>                                                         
+        <td id="tdAnswerIMG_D_2223" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_2223" value="B" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_2223" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_2223">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">B</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_2223').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_2223">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-2307"  rowspan="2" valign="top" align="left">29.</td>
+                <td class="bix-td-qtxt" valign="top"><p>a) The aircraft was overloaded / b) there was something wrong of the battery / c) but miserly / d) No error </p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_2307" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_2307"><input type="checkbox" class="result-option cls_2307" id="optionAns_A_2307"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_2307"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">The aircraft was overloaded</td>                                                         
+        <td id="tdAnswerIMG_A_2307" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_2307"><input type="checkbox" class="result-option cls_2307" id="optionAns_B_2307"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_2307"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">there was something wrong of the battery</td>                                                         
+        <td id="tdAnswerIMG_B_2307" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_2307"><input type="checkbox" class="result-option cls_2307" id="optionAns_C_2307"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_2307"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">but miserly</td>                                                         
+        <td id="tdAnswerIMG_C_2307" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_2307"><input type="checkbox" class="result-option cls_2307" id="optionAns_D_2307"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_2307"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">No error</td>                                                         
+        <td id="tdAnswerIMG_D_2307" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_2307" value="B" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_2307" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_2307">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">B</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_2307').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_2307">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>      
+            <table class="bix-tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+                <td class="bix-td-qno jq-qno-0623"  rowspan="2" valign="top" align="left">30.</td>
+                <td class="bix-td-qtxt" valign="top"><p>Find Correctly spelt word.</p></td>
+            </tr>
+            <tr>
+                <td class="bix-td-miscell" valign="top"><table class="bix-tbl-options" id="tblOption_0623" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_A_0623"><input type="checkbox" class="result-option cls_0623" id="optionAns_A_0623"></td><td class="bix-td-option" width="1%">A.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_A_0623"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">Suprintendent</td>                                                         
+        <td id="tdAnswerIMG_A_0623" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_B_0623"><input type="checkbox" class="result-option cls_0623" id="optionAns_B_0623"></td><td class="bix-td-option" width="1%">B.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_B_0623"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">Supirentendent</td>                                                         
+        <td id="tdAnswerIMG_B_0623" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+           
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_C_0623"><input type="checkbox" class="result-option cls_0623" id="optionAns_C_0623"></td><td class="bix-td-option" width="1%">C.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_C_0623"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">Superintendent</td>                                                         
+        <td id="tdAnswerIMG_C_0623" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr><tr><td nowrap="nowrap" class="bix-td-option bix-td-radio" width="1%"  id="tdOptionNo_D_0623"><input type="checkbox" class="result-option cls_0623" id="optionAns_D_0623"></td><td class="bix-td-option" width="1%">D.</td>
+                         <td class="bix-td-option" width="99%" id="tdOptionDt_D_0623"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>                                                          
+        <td class="bix-inner-td-option">Superentendent</td>                                                         
+        <td id="tdAnswerIMG_D_0623" class="jq-img-answer mx-none mx-lpad-10"  valign="middle">               
+             
+        </td>                                                         
+        </tr>                                                         
+        </table></td></tr></table><input type="hidden" class="jq-actual-answer"   id="optionAnswer_0623" value="C" />
+                     <input type="hidden" class="jq-selected-answer" id="optionSelAns_0623" value="" />
+                     
+        <div class="bix-div-answer mx-none" id="divAnswer_0623">
+         <div class="div-ans-des-wrapper">
+            <p><span class="ib-green">Your Answer:</span> Option <span class="jq-user-answer ib-gray ib-bold">(Not Answered)</span></p> 
+            <p><span class="ib-green">Correct Answer:</span> Option <span class="ib-dgray ib-bold">C</span></p><div class="bix-ans-description"></div></div>
+        </div><div class="jq-workspace">
+            <div class="div-workspace-link mx-fs-13"><a href="javascript: void 0;" onclick="$('#divWorkspace_0623').slideToggle('slow');" title="Workspace">[#]</a></div>
+            <div class="mx-none" id="divWorkspace_0623">
+                <textarea class="div-workspace-box" rows="10" cols="50"></textarea>
+            </div>
+        </div> 
+                </td>
+            </tr>
+            </table>
+    </div>
+        </div>
+        
+        <div id="divResult" class="div-tab-container mx-none mx-w-100p">
+            <b>Submit your test now to view the Results and Statistics with answer explanation.</b>
+        </div>    
+
+        <div id="divSubmitTest" align="center" style="display:none; padding:20px; margin-top:20px; margin-bottom:20px; border:1px dashed #ccc; background-color:#fdfdfd;">
+            <input style="height:30px; font-size:14px" align="center" type="button" value="   Submit Test   " id="btnSubmitTest" />
+        </div>
+        
+        <hr /><div class="hide-1 div-ad-wrapper-bvf"></div><hr />
+        
+        <div id="divFeedback" style="display:none; width:100%; padding:25px;">
+            
+            <p align="center"> <h4 align="center">*** END OF THE TEST ***</h4> </p>
+            
+            <table align="left" class="ib-dgray" cellspacing="0" cellpadding="5" style="border:2px solid #daf7f7; background-color:#fafafa;"  width="100%">
+            <tr><td align="left" bgcolor="#daf7f7" colspan="3"><b>Feedback</b></td></tr>
+            <tr>
+                <td nowrap="nowrap">Quality of the Test</td>
+                <td>:</td>
+                <td>
+                    <select  id="idQualityLevel">
+                      <option value="0"> -- Select -- </option>
+                      <option value="5">Excellent</option>
+                      <option value="3">Medium</option>
+                      <option value="1">Poor</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap">Difficulty of the Test</td>
+                <td>:</td>
+                <td>
+                    <select id="idDifficultyLevel">
+                      <option value="0"> -- Select -- </option>
+                      <option value="1">Easy</option>
+                      <option value="3">Normal</option>
+                      <option value="5">Hard</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" width="100%" >Comments:<br />
+                    <textarea id="txtComments" cols="40" rows="4" style="width:100%; padding:5px;">...</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center" width="100%" style="padding:15px;">
+                    <input type="button" onclick="SendTestFeedback()" id="btnSubmitFeedback" value="Submit Feedback">
+                </td>
+            </tr>
+            </table>
+    
+           
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>window.onbeforeunload = function () {//Prevent Ctrl+W
+    return "Really want to quit the game?";
+};
+document.onkeydown = function (e) {
+    e = e || window.event;//Get event
+    if (e.ctrlKey) {
+        var c = e.which || e.keyCode;//Get key code
+        switch (c) {
+            case 83://Block Ctrl+S
+            case 85://Block Ctrl+W --Not work in Chrome
+                e.preventDefault();     
+                e.stopPropagation();
+            break;
+        }
+    }
+};
+    </script>
+            <script type="text/javascript"> 
+function disableselect(e){  
+return false  
+}  
+function reEnable(){  
+return true  
+}  
+//if IE4+  
+document.onselectstart=new Function ("return false")  
+document.oncontextmenu=new Function ("return false")  
+//if NS6  
+if (window.sidebar){  
+document.onmousedown=disableselect  
+document.onclick=reEnable  
+}
+</script
+
+
+</body></html>
