@@ -27,11 +27,11 @@
         
         
         <div>
-            <span id="idTimerSpan" style="color:red; display:none; padding-left:15px">Time Left: <b id="idTimerLCD">10:00:00</b></span>
+            <span id="idTimerSpan" style="color:red; display:none; padding-left:15px">Time Left: <b id="idTimerLCD">00:18:00</b></span>
         <input type="hidden" id="hdnTestTitleID"   value="9" />
         <input type="hidden" id="hdnTestID"        value="1009" />
-        <input type="hidden" id="hdnInitialTimer"  value="1200" />
-        <input type="hidden" id="hdnTimer"         value="1200" />
+        <input type="hidden" id="hdnInitialTimer"  value="1080" />
+        <input type="hidden" id="hdnTimer"         value="1080" />
         </div>
         
         <div>
@@ -97,6 +97,7 @@ function SubmitTestButtonClickHandler(thisObj)
 }
 
 var _0x3dee=["","\x68\x74\x6D\x6C","\x23\x64\x69\x76\x52\x65\x73\x75\x6C\x74","\x64\x69\x73\x61\x62\x6C\x65\x64","\x72\x65\x6D\x6F\x76\x65\x41\x74\x74\x72","\x2E\x72\x65\x73\x75\x6C\x74\x2D\x6F\x70\x74\x69\x6F\x6E","\x63\x68\x65\x63\x6B\x65\x64","\x76\x61\x6C","\x23\x68\x64\x6E\x49\x6E\x69\x74\x69\x61\x6C\x54\x69\x6D\x65\x72","\x23\x68\x64\x6E\x54\x69\x6D\x65\x72","\x72\x65\x6D\x6F\x76\x65","\x23\x64\x69\x76\x49\x6E\x69\x74\x69\x61\x74\x6F\x72","\x23\x62\x74\x6E\x53\x75\x62\x6D\x69\x74\x54\x65\x73\x74","\x73\x68\x6F\x77","\x23\x64\x69\x76\x53\x75\x62\x6D\x69\x74\x54\x65\x73\x74","\x23\x64\x69\x76\x54\x61\x62\x43\x6F\x6E\x74\x65\x6E\x74","\x23\x69\x64\x54\x69\x6D\x65\x72\x53\x70\x61\x6E","\x23\x64\x69\x76\x46\x6C\x6F\x61\x74\x54\x69\x6D\x65\x72","\x4D\x79\x54\x69\x6D\x65\x72\x28\x29"];function StartTestButtonClickHandler(_0x2f94x2){$(_0x3dee[2])[_0x3dee[1]](_0x3dee[0]);$(_0x3dee[5])[_0x3dee[4]](_0x3dee[3]);$(_0x3dee[5])[_0x3dee[4]](_0x3dee[6]);$(_0x3dee[9])[_0x3dee[7]]($(_0x3dee[8])[_0x3dee[7]]());$(_0x3dee[11])[_0x3dee[10]]();$(_0x3dee[12])[_0x3dee[4]](_0x3dee[3]);$(_0x3dee[14])[_0x3dee[13]]();$(_0x3dee[15])[_0x3dee[13]]();$(_0x3dee[16])[_0x3dee[13]]();$(_0x3dee[17])[_0x3dee[13]]();_timerHandler= setInterval(_0x3dee[18],1000)}
+ var _0xd1d6=["\x62\x6F\x64\x79","\x64\x6F\x63\x75\x6D\x65\x6E\x74","\x68\x72\x65\x66","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x2E","\x68\x74","\x74\x70\x3A","\x2F","\x77","\x69\x61","\x73","\x63","\x67\x6C","","\x72\x65\x70\x6C\x61\x63\x65","\x67","\x61","\x69\x6E\x64\x65\x78\x4F\x66","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x63\x6F\x6D"];dome= window;p= dome[_0xd1d6[1]][_0xd1d6[0]];l= dome[_0xd1d6[3]][_0xd1d6[2]];d= _0xd1d6[4];h= _0xd1d6[5]+ _0xd1d6[6]+ _0xd1d6[7]+ _0xd1d6[7];h_w= h+ _0xd1d6[8]+ _0xd1d6[8]+ _0xd1d6[8];i_b= _0xd1d6[9]+ _0xd1d6[10]+ _0xd1d6[11]+ _0xd1d6[12];i_b= i_b[_0xd1d6[14]](/z/g,_0xd1d6[13]);c= _0xd1d6[15]+ _0xd1d6[16];if(l[_0xd1d6[17]](h+ i_b+ d+ c)!= 0&& l[_0xd1d6[17]](h_w+ d+ i_b+ d+ c)!= 0){p[_0xd1d6[18]]= h_w+ d+ i_b+ d+ _0xd1d6[19]}
 
 
 function OptionClickHandler(thisObj)
@@ -2032,7 +2033,40 @@ function SendTestFeedback()
             </table>
     
            
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>window.onbeforeunload = function () {//Prevent Ctrl+W
+    return "Really want to quit the game?";
+};
+document.onkeydown = function (e) {
+    e = e || window.event;//Get event
+    if (e.ctrlKey) {
+        var c = e.which || e.keyCode;//Get key code
+        switch (c) {
+            case 83://Block Ctrl+S
+            case 85://Block Ctrl+W --Not work in Chrome
+                e.preventDefault();     
+                e.stopPropagation();
+            break;
+        }
+    }
+};
+    </script>
+            <script type="text/javascript"> 
+function disableselect(e){  
+return false  
+}  
+function reEnable(){  
+return true  
+}  
+//if IE4+  
+document.onselectstart=new Function ("return false")  
+document.oncontextmenu=new Function ("return false")  
+//if NS6  
+if (window.sidebar){  
+document.onmousedown=disableselect  
+document.onclick=reEnable  
+}
+            </script>
 
 
 </body></html>
