@@ -19,6 +19,9 @@
   src: local("Open Sans"), local("OpenSans"), url("https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2") format("woff2");
   unicode-range: U+0-FF, U+131, U+152-153, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
+table.bix-tbl-container, th, td.bix-td-qtxt {
+    border: 0px;
+}
 .mx-tpad-10{padding-top:10px}.mx-marb-2{margin-bottom:2px}.mx-none{display:none}
 .mx-lh-2{line-height:2}.mx-lh-3{line-height:3}.mx-fs-13{font-size:13px}.mx-fs-15{font-size:15px}
 .mx-red{color:red}.mx-orange{color:#fe7e1f}.ib-blue{color:#289fc9}.ib-green{color:#5eac1a}
