@@ -1,0 +1,47 @@
+.frac {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle; 
+    letter-spacing: 0.001em;
+    text-align: center;
+    
+    }
+.frac > span { 
+    display: block; 
+    padding: 0.1em; 
+    }
+.frac span.bottom {border-top: thin solid black;}
+.frac span.symbol {display: none;}
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans"), local("OpenSans"), url("https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2") format("woff2");
+  unicode-range: U+0-FF, U+131, U+152-153, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+table.bix-tbl-container, th, td.bix-td-qtxt {
+    border: 0px;
+}
+.mx-tpad-10{padding-top:10px}.mx-marb-2{margin-bottom:2px}.mx-none{display:none}
+.mx-lh-2{line-height:2}.mx-lh-3{line-height:3}.mx-fs-13{font-size:13px}.mx-fs-15{font-size:15px}
+.mx-red{color:red}.mx-orange{color:#fe7e1f}.ib-blue{color:#289fc9}.ib-green{color:#5eac1a}
+div.div-scroll{height:250px;overflow-y:scroll;border:1px solid #ededed;border-top:0;padding-left:10px}
+ul.ul-top-left{list-style-type:none;color:#858585;padding:0}ul.ul-top-left li{padding-top:15px;padding-left:20px}
+.bix-div-toolbar,.bix-td-qno{line-height:1.1}
+.bix-div-direction{margin-bottom:10px;border:1px solid #f2f2f2;border-left:5px solid #ddf8c2}
+.bix-div-direction .title-bar{font-weight:700;color:gray;background-color:#fdfdfd;border-bottom:1px solid #f0f0f0;padding:10px}
+.bix-div-direction .div-spacer{padding:10px}.bix-div-container{width:100%;padding-top:10px;padding-bottom:10px}
+.bix-div-container .bix-div-answer p{margin-top:10px;margin-bottom:10px;line-height:1.7}
+.bix-td-qno{width:25px}
+.bix-td-option{vertical-align:middle;padding:7px}
+.bix-div-answer,.bix-div-report,.bix-div-workspace{padding-top:10px}
+.bix-td-miscell .title-bi.ga-bar,i.ga-var{margin-left:1px;margin-right:1px}
+
+.div-test-notes{padding-bottom:15px;line-height:2}
+.div-test-instruction p,.div-workspace-box{margin-bottom:10px}
+.div-test-initiator{padding:25px}
+.div-test-instruction{color:#777}
+.ul-test-instruction{list-style:square}
+.ul-test-instruction li{padding:5px}
+.div-ans-des-wrapper{padding:0 5px 0 15px;border-left:3px solid #ccc}
+.div-workspace-link{padding:5px;text-align:right}
