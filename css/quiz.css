@@ -22,6 +22,16 @@
 table.bix-tbl-container, th, td.bix-td-qtxt {
     border: 0px;
 }
+table,td,th{
+    border: 0px!important;
+        vertical-align: top!important;
+    text-align: left!important;
+    color: black!important;
+}
+body{
+
+}
+#divResultStatistics td{font-size: 20px}
 .mx-tpad-10{padding-top:10px}.mx-marb-2{margin-bottom:2px}.mx-none{display:none}
 .mx-lh-2{line-height:2}.mx-lh-3{line-height:3}.mx-fs-13{font-size:13px}.mx-fs-15{font-size:15px}
 .mx-red{color:red}.mx-orange{color:#fe7e1f}.ib-blue{color:#289fc9}.ib-green{color:#5eac1a}
