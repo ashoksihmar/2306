@@ -64,10 +64,10 @@ function BixPageSpecificFunctionsLoad()
         
         if( optNo == ansNo ) // Show Answer & Description with Tick mark image..
         {
-            var txtImageHtml = '<table border="0" cellpadding="0" cellspacing="0"><tr><td class="bix-inner-td-option">[XXX]</td><td valign="middle" style="padding-left:10px;"><img src="/_files/images/website/accept.png" alt="@" /></td></tr></table>'
+            var txtImageHtml = '<table border="0" cellpadding="0" cellspacing="0"><tr><td class="bix-inner-td-option">[XXX]</td><td valign="middle" style="padding-left:10px;"></td></tr></table>'
             var txtAnswerHtml = $("#tdOptionDt_" + ansNo + "_" + qusNo).html();
             
-            if(txtAnswerHtml.indexOf('accept.png') == -1)
+            if(txtAnswerHtml.indexOf('') == -1)
             {
                 txtImageHtml = txtImageHtml.replace('[XXX]', txtAnswerHtml );
                 $("#tdOptionDt_" + ansNo + "_" + qusNo).html( txtImageHtml );
@@ -287,7 +287,7 @@ function OnlineCompiler(pQuesID)
                     "&Random="      + Math.random() ; 
  
   $('input#btnCompiler_' + pQuesID).attr('disabled', true); 
-  $('div#divCompilerOutput_' + pQuesID).html('<img src="/_files/images/website/cprogress.gif" alt="Compilation in progress.." />');  
+  $('div#divCompilerOutput_' + pQuesID).html('');  
   $('div#divCompilerOutput_' + pQuesID).show(); 
                       
   $.ajax({
