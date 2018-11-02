@@ -24,6 +24,7 @@ table.bix-tbl-container, th, td.bix-td-qtxt {
 }
 table,td,th{
     border: 0px!important;
+    background-color: white;
         vertical-align: top!important;
     text-align: left!important;
     color: black!important;
